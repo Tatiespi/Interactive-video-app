@@ -22,8 +22,8 @@ export default function DragDrop() {
     const frameHeight = 200; // Modifica estos valores según el alto de tu marco
 
     // Obtener las coordenadas donde se soltó la imagen
-    const dropX = data.x0;
-    const dropY = data.y0;
+    const dropX = data.moveX;
+    const dropY = data.moveY;
     console.log(data);
 
     // Verificar si las coordenadas de la imagen están dentro del marco
@@ -50,32 +50,36 @@ export default function DragDrop() {
         style={styles.frame}
       >
         {dropped ? (
-          <Text>Imagen correcta</Text>
+          <Text style={styles.feedbackText}>Imagen correcta</Text>
         ) : (
-          <Text>Imagen incorrecta</Text>
+          <Text style={styles.feedbackText}>Imagen incorrecta</Text>
         )}
+        <Image
+            source={require("../../../assets/suelo.png")}
+            style={styles.frameImage}
+          />
       </View>
 
       {/* Aquí van las imágenes */}
       <View style={styles.imagesContainer}>
         <Draggable onDragRelease={(e, data) => handleDrop(e, data, 1)}>
           <Image
-            source={require("../../../assets/favicon.png")}
+            source={require("../../../assets/arbol.png")}
             style={styles.image}
           />
         </Draggable>
-        {/* <Draggable onDragRelease={(e, data) => handleDrop(e, data, 2)}>
+        <Draggable onDragRelease={(e, data) => handleDrop(e, data, 2)}>
           <Image
-            source={require("../../../assets/favicon.png")}
-            style={styles.image}
+            source={require("../../../assets/papel.png")}
+            style={styles.trashImage}
           />
         </Draggable>
         <Draggable onDragRelease={(e, data) => handleDrop(e, data, 3)}>
           <Image
-            source={require("../../../assets/favicon.png")}
-            style={styles.image}
+            source={require("../../../assets/plastico.png")}
+            style={styles.trashImage}
           />
-        </Draggable> */}
+        </Draggable>
       </View>
     </View>
   );
@@ -94,11 +98,22 @@ const styles = StyleSheet.create({
     borderColor: "black",
     marginTop: 300,
     borderRadius: 20,
-    /* marginBottom: 20, */
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
+    resizeMode: "contain",
+    marginHorizontal: 10,
+  },
+  frameImage:{
+    width: 185,
+    height: 190,
+    resizeMode: "contain",
+    marginTop: 18,
+  },
+  trashImage:{
+    width: 80,
+    height: 80,
     resizeMode: "contain",
     marginHorizontal: 10,
   },
@@ -106,5 +121,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+  },
+  feedbackText:{
+    textAlign: "center",
   },
 });
