@@ -10,8 +10,7 @@ export default function App() {
       <Navbar />
       {/* <HelloWorld /> */}
       <DragDrop/>
-      <StatusBar/>
-      <Home/>
+      {/* <Home/> */}
     </View>
   );
 }
