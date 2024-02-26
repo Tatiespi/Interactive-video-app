@@ -1,10 +1,11 @@
 // Home.js
-import React, { useRef, useEffect } from 'react';
-import { StyleSheet, Text, Button, View } from 'react-native';
-import { Video, ResizeMode } from 'expo-av';
+import React, { useRef, useEffect } from "react";
+import { StyleSheet, Text, Button, View } from "react-native";
+import { Video, ResizeMode } from "expo-av";
 
 export default function Home({ videoUrl }) {
-  const video = useRef(null);
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({});
 
   useEffect(() => {
     const loadAndPlayVideo = async () => {
@@ -23,15 +24,23 @@ export default function Home({ videoUrl }) {
       <Video
         ref={video}
         style={styles.video}
+        source={{
+          uri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+        }}
         useNativeControls={false}
         resizeMode={ResizeMode.CONTAIN}
         isLooping
+        onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
       <View style={styles.buttons}>
         <Button
-          color={'#84bf04'}
-          title="Pause"
-          onPress={() => video.current && video.current.pauseAsync()}
+          color={"#84bf04"}
+          title={status.isPlaying ? "Pause" : "Play"}
+          onPress={() =>
+            status.isPlaying
+              ? video.current.pauseAsync()
+              : video.current.playAsync()
+          }
         />
       </View>
     </View>
@@ -40,17 +49,17 @@ export default function Home({ videoUrl }) {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    justifyContent: 'center',
+    display: "flex",
+    justifyContent: "center",
   },
   video: {
-    alignSelf: 'center',
+    alignSelf: "center",
     width: 320,
     height: 200,
   },
   buttons: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
