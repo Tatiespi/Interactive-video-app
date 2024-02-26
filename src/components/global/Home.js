@@ -1,11 +1,24 @@
-import * as React from "react";
+import React, { useRef, useEffect } from "react";
 import { StyleSheet, Text, Button, View } from "react-native";
 import { Video, ResizeMode } from "expo-av";
 import testVideo from "../../../assets/test-video.mp4";
 
-export default function Home() {
+export default function Home({ videoUrl }) {
   const video = React.useRef(null);
   const [status, setStatus] = React.useState({});
+
+  useEffect(() => {
+    const loadAndPlayVideo = async () => {
+      if (video.current) {
+        await video.current.unloadAsync();
+        await video.current.loadAsync({ uri: videoUrl }, {}, false);
+        await video.current.playAsync();
+      }
+    };
+
+    loadAndPlayVideo();
+  }, [videoUrl]);
+
   return (
     <View style={styles.container}>
       <Video
