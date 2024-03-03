@@ -1,6 +1,6 @@
-// QuestionWithAnswers.js
-import React, { useState, useEffect } from 'react';
-import { View, Text, Button as RNButton } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { View, Text, Button as RNButton } from "react-native";
+import { styles } from "./Style";
 
 const QuestionWithAnswers = ({ onVideoChange }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -10,7 +10,7 @@ const QuestionWithAnswers = ({ onVideoChange }) => {
     // Temporizador para mostrar la interfaz después de 3 segundos
     const timer = setTimeout(() => {
       setVisible(true);
-    }, 3000);
+    }, 1500);
 
     return () => {
       // Limpia el temporizador cuando el componente se desmonta
@@ -19,10 +19,24 @@ const QuestionWithAnswers = ({ onVideoChange }) => {
   }, []);
 
   const options = [
-    { id: 1, text: 'Porque si', videoUrl: 'https://files.catbox.moe/1sgsaf.mp4' },
-    { id: 2, text: 'Porque no', videoUrl: 'https://nuevo-video2.mp4' },
-    { id: 3, text: 'Para salvar el petróleo', videoUrl: 'https://nuevo-video3.mp4' },
-    { id: 4, text: 'Para salvar el medio ambiente', videoUrl: 'https://nuevo-video4.mp4' },
+    {
+      id: 1,
+      choiceLetter: "A",
+      text: "Porque si",
+      videoUrl: "https://files.catbox.moe/1sgsaf.mp4",
+    },
+    {
+      id: 2,
+      choiceLetter: "B",
+      text: "Porque no",
+      videoUrl: "https://nuevo-video2.mp4",
+    },
+    {
+      id: 3,
+      choiceLetter: "C",
+      text: "Para salvar el petróleo",
+      videoUrl: "https://nuevo-video3.mp4",
+    },
   ];
 
   const handleAnswerSelection = (option) => {
@@ -33,17 +47,30 @@ const QuestionWithAnswers = ({ onVideoChange }) => {
   };
 
   return (
-    <View style={{ display: visible ? 'flex' : 'none' }}>
-      <Text>¿Por qué deberíamos reciclar?</Text>
-      {options.map((option) => (
-        <RNButton
-          key={option.id}
-          title={option.text}
-          type={selectedAnswer === option ? 'solid' : 'outline'}
-          onPress={() => handleAnswerSelection(option)}
-        />
-      ))}
-      <Text>Respuesta seleccionada: {selectedAnswer?.text}</Text>
+    <View
+      style={[
+        styles.questionsStyles.container,
+        { display: visible ? "flex" : "none" },
+      ]}
+    >
+      <View style={styles.questionsStyles.optionsContainer}>
+        {options.map((option) => (
+          <View style={styles.questionsStyles.option} key={option.id}>
+            <Text style={styles.questionsStyles.optionLetter}>
+              {option.choiceLetter}
+            </Text>
+            <RNButton
+              title={option.text}
+              type={selectedAnswer === option ? "solid" : "outline"}
+              onPress={() => handleAnswerSelection(option)}
+            ></RNButton>
+          </View>
+        ))}
+      </View>
+      <View>
+        <Text>¿Por qué deberíamos reciclar?</Text>
+      </View>
+      {/* <Text>Respuesta seleccionada: {selectedAnswer?.text}</Text> */}
     </View>
   );
 };
