@@ -27,15 +27,28 @@ export default function App() {
   const handleVideoChange = (newVideoUrl) => {
     setVideoUrl(newVideoUrl);
   };
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [answerResult, setAnswerResult] = useState(true);
+  const handleRetryGame = () => {
+    // Reiniciar el estado del juego aquí
+    setShowFeedback(false);
+  };
 
   return (
     <View style={styles.generalStyles.container}>
       {/* <QuestionWithAnswers onVideoChange={handleVideoChange} /> */}
-      {/* <DragDrop/> */}
-      <FeedBack
-        textToShow={objectsPositiveText}
-        isRightAnswer={true}
-      ></FeedBack>
+      {showFeedback ? (
+        <FeedBack
+          textToShow={answerResult ? objectsPositiveText : objectsNegativeText}
+          isRightAnswer={answerResult ? true : false}
+          onRetryGame={handleRetryGame}
+        ></FeedBack>
+      ) : (
+        <DragDrop
+          onFeedbackChange={(value) => setShowFeedback(value)}
+          onAnswerChange={(value) => setAnswerResult(value)}
+        />
+      )}
     </View>
   );
 }

@@ -4,7 +4,7 @@ import { styles } from "./Style";
 import sadFace from "../../../assets/sad-face.png";
 import happyFace from "../../../assets/happy-face.png";
 
-export default function Feedback({ textToShow, isRightAnswer }) {
+export default function Feedback({ textToShow, isRightAnswer, onRetryGame }) {
   return (
     <View>
       <View style={styles.feedbackStyles.container}>
@@ -20,7 +20,7 @@ export default function Feedback({ textToShow, isRightAnswer }) {
           { display: isRightAnswer ? "none" : "flex" },
         ]}
       >
-        <Button title='Volver a Intentar' color='#212121'></Button>
+        <Button title="Volver a Intentar" color="#212121" onPress={onRetryGame}></Button>
       </View>
     </View>
   );
