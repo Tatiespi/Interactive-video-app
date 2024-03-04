@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Text, View, Image } from "react-native";
 import Draggable from "react-native-draggable";
 import { styles } from "../global/Style";
+import Feedback from "../global/Feedback";
 
-export default function DragDrop() {
+export default function DragDrop({ onFeedbackChange, onAnswerChange }) {
   const [dropped, setDropped] = useState(true);
   const [frameInX, setFrameInX] = useState("");
   const [frameInY, setFrameInY] = useState("");
@@ -20,7 +21,7 @@ export default function DragDrop() {
     tierra: require("../../../assets/matera.png"),
     agua: require("../../../assets/agua.png"),
   };
-  
+
   // Ref to store the reference to draggable components
   const handleDrop = (e, data, id) => {
     const frame = this.frame;
@@ -74,6 +75,8 @@ export default function DragDrop() {
         console.log(order);
         if (order >= 3) {
           console.log("Ganaste");
+          onFeedbackChange(true);
+          onAnswerChange(true);
         }
       } else {
         setDropped(true);
@@ -98,6 +101,8 @@ export default function DragDrop() {
           default:
             break;
         }
+        onFeedbackChange(true);
+        onAnswerChange(false);
       }
     }
   };
