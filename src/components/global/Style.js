@@ -81,22 +81,28 @@ export const styles = StyleSheet.create({
   },
   dragDropStyles: {
     container: {
-      marginTop: screenHeight / 5,
       display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-evenly",
-      alignItems: "center",
+      flexDirection: "column",
+      justifyContent: "center",
+      backgroundColor: "rgba(128, 128, 128, 0.85)",
+      flex: 1,
     },
     frame: {
-      width: 200,
-      height: 200,
-      borderWidth: 8,
-      borderColor: "black",
-      borderRadius: 20,
+      width: 150,
+      height: 130,
+      borderRadius: 100,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.8,
+      shadowRadius: 8,
+      elevation: 15,
+      marginTop: 45,
+      alignItems: "center",
+      justifyContent: "center",
     },
     image: {
-      width: 150,
-      height: 150,
+      width: 80,
+      height: 80,
       resizeMode: "contain",
     },
     frameImage: {
@@ -114,10 +120,71 @@ export const styles = StyleSheet.create({
     imagesContainer: {
       flexDirection: "row",
       justifyContent: "center",
+      marginRight: 120,
+    },
+    imagePair: {
       alignItems: "center",
+      flexDirection: "column",
     },
     feedbackText: {
       textAlign: "center",
     },
+    dragDropContainer: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      marginTop: screenHeight / 14,
+    },
+    tittleText: {
+      textAlign: "center",
+      color: "#FFFFFF",
+      textTransform: "uppercase",
+      textAlign: "center",
+      fontSize: 20,
+      fontWeight: 700,
+      paddingHorizontal: 80,
+    },
+    space: {
+      marginRight: 130,
+    },
+    imageGroupContainer: {
+      flexDirection: "column",
+    },
+    verticalSpace: {
+      marginTop: 110,
+    },
+  },
+  feedbackStyles: {
+    container: {
+      position: "absolute",
+      left: screenWidth / 2 - 425,
+      width: screenWidth / 1.2,
+      height: screenHeight / 1.5,
+      backgroundColor: "rgba(128, 128, 128, 0.85)",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      borderBottomLeftRadius: 15,
+      borderBottomRightRadius: 15,
+    },
+    image: {
+      width: 57.69,
+      height: 56.88,
+    },
+    text: {
+      paddingHorizontal: 25,
+      color: "#FFFFFF",
+      textTransform: "uppercase",
+      textAlign: "center",
+      fontSize: 18,
+      fontWeight: 700,
+    },
+    buttonWrapper: {
+      alignItems: "center",
+      position: "relative",
+      top: screenHeight / 1.6,
+    },
   },
 });
+
