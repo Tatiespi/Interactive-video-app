@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableHighlight } from "react-native";
 import { styles } from "./Style";
 
-const QuestionWithAnswers = () => {
+const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [visible, setVisible] = useState(true);
 
@@ -30,19 +30,27 @@ const QuestionWithAnswers = () => {
       setSelectedAnswer(option);
       setVisible(false);
     }
+
+    if (option.choiceLetter == "A") {
+      onAnswerChange(true);
+      onFeedbackChange(true);
+    } else {
+      onAnswerChange(false);
+      onFeedbackChange(true);
+    }
   };
 
-  const renderResultText = () => {
-    if (selectedAnswer) {
-      return (
-        <Text style={styles.questionsStyles.resultText}>
-          ¡Seleccionaste la opción {selectedAnswer.choiceLetter}! {"\n"}
-          {selectedAnswer.text}
-        </Text>
-      );
-    }
-    return null;
-  };
+  // const renderResultText = () => {
+  //   if (selectedAnswer) {
+  //     return (
+  //       <Text style={styles.questionsStyles.resultText}>
+  //         ¡Seleccionaste la opción {selectedAnswer.choiceLetter}! {"\n"}
+  //         {selectedAnswer.text}
+  //       </Text>
+  //     );
+  //   }
+  //   return null;
+  // };
 
   return (
     <View style={styles.questionsStyles.container}>
@@ -74,7 +82,10 @@ const QuestionWithAnswers = () => {
                         {option.choiceLetter}
                       </Text>
                     </View>
-                    <Text style={styles.questionsStyles.optionText} numberOfLines={3}>
+                    <Text
+                      style={styles.questionsStyles.optionText}
+                      numberOfLines={3}
+                    >
                       {option.text}
                     </Text>
                   </>
@@ -85,7 +96,7 @@ const QuestionWithAnswers = () => {
         </>
       )}
 
-      {!visible && renderResultText()}
+      {/* {!visible && renderResultText()} */}
     </View>
   );
 };
