@@ -1,76 +1,91 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Button as RNButton } from "react-native";
+// QuestionWithAnswers.js
+import React, { useState } from "react";
+import { View, Text, TouchableHighlight } from "react-native";
 import { styles } from "./Style";
 
-const QuestionWithAnswers = ({ onVideoChange }) => {
+const QuestionWithAnswers = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    // Temporizador para mostrar la interfaz después de 3 segundos
-    const timer = setTimeout(() => {
-      setVisible(true);
-    }, 1500);
-
-    return () => {
-      // Limpia el temporizador cuando el componente se desmonta
-      clearTimeout(timer);
-    };
-  }, []);
+  const [visible, setVisible] = useState(true);
 
   const options = [
     {
-      id: 1,
+      id: "1",
       choiceLetter: "A",
-      text: "Porque si",
-      videoUrl: "https://files.catbox.moe/1sgsaf.mp4",
+      text: "REDUCIR LA HUELLA DE CARBONO AL EVITAR EL USO DE VEHÍCULOS MOTORIZADOS",
     },
     {
-      id: 2,
+      id: "2",
       choiceLetter: "B",
-      text: "Porque no",
-      videoUrl: "https://nuevo-video2.mp4",
+      text: "AUMENTAR LA CONGESTIÓN VEHICULAR EN LAS CALLES",
     },
     {
-      id: 3,
+      id: "3",
       choiceLetter: "C",
-      text: "Para salvar el petróleo",
-      videoUrl: "https://nuevo-video3.mp4",
+      text: "CONTRIBUIR AL CALENTAMIENTO GLOBAL AL EMITIR MENOS GASES DE EFECTO INVERNADERO",
     },
   ];
 
   const handleAnswerSelection = (option) => {
-    setSelectedAnswer(option);
-    onVideoChange(option.videoUrl);
-    // Oculta la interfaz de preguntas después de seleccionar la respuesta
-    setVisible(false);
+    if (!selectedAnswer) {
+      setSelectedAnswer(option);
+      setVisible(false);
+    }
+  };
+
+  const renderResultText = () => {
+    if (selectedAnswer) {
+      return (
+        <Text style={styles.questionsStyles.resultText}>
+          ¡Seleccionaste la opción {selectedAnswer.choiceLetter}! {"\n"}
+          {selectedAnswer.text}
+        </Text>
+      );
+    }
+    return null;
   };
 
   return (
-    <View
-      style={[
-        styles.questionsStyles.container,
-        { display: visible ? "flex" : "none" },
-      ]}
-    >
-      <View style={styles.questionsStyles.optionsContainer}>
-        {options.map((option) => (
-          <View style={styles.questionsStyles.option} key={option.id}>
-            <Text style={styles.questionsStyles.optionLetter}>
-              {option.choiceLetter}
+    <View style={styles.questionsStyles.container}>
+      {visible && (
+        <>
+          <View style={styles.questionsStyles.questionContainer}>
+            <Text style={styles.questionsStyles.questionText}>
+              ¿CUÁL ES UNO DE LOS PRINCIPALES BENEFICIOS DE ANDAR EN BICICLETA?
             </Text>
-            <RNButton
-              title={option.text}
-              type={selectedAnswer === option ? "solid" : "outline"}
-              onPress={() => handleAnswerSelection(option)}
-            ></RNButton>
           </View>
-        ))}
-      </View>
-      <View>
-        <Text>¿Por qué deberíamos reciclar?</Text>
-      </View>
-      {/* <Text>Respuesta seleccionada: {selectedAnswer?.text}</Text> */}
+
+          <View style={styles.questionsStyles.answersContainer}>
+            {options.map((option) => (
+              <View key={option.id}>
+                <TouchableHighlight
+                  onPress={() => handleAnswerSelection(option)}
+                  underlayColor={option.choiceLetter === "A" ? "green" : "red"}
+                  style={[
+                    styles.questionsStyles.option,
+                    selectedAnswer === option &&
+                      (option.choiceLetter === "A"
+                        ? styles.questionsStyles.optionCorrect
+                        : styles.questionsStyles.optionIncorrect),
+                  ]}
+                >
+                  <>
+                    <View style={styles.questionsStyles.optionLetterContainer}>
+                      <Text style={styles.questionsStyles.optionLetter}>
+                        {option.choiceLetter}
+                      </Text>
+                    </View>
+                    <Text style={styles.questionsStyles.optionText} numberOfLines={3}>
+                      {option.text}
+                    </Text>
+                  </>
+                </TouchableHighlight>
+              </View>
+            ))}
+          </View>
+        </>
+      )}
+
+      {!visible && renderResultText()}
     </View>
   );
 };
