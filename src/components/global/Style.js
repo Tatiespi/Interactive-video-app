@@ -115,4 +115,35 @@ export const styles = StyleSheet.create({
       marginTop: 110,
     },
   },
+  feedbackStyles: {
+    container: {
+      position: "absolute",
+      left: screenWidth / 2 - 425,
+      width: screenWidth / 1.2,
+      height: screenHeight / 1.5,
+      backgroundColor: "rgba(128, 128, 128, 0.85)",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      borderBottomLeftRadius: 15,
+      borderBottomRightRadius: 15,
+    },
+    image: {
+      width: 57.69,
+      height: 56.88,
+    },
+    text: {
+      paddingHorizontal: 25,
+      color: "#FFFFFF",
+      textTransform: "uppercase",
+      textAlign: "center",
+      fontSize: 18,
+      fontWeight: 700,
+    },
+    buttonWrapper: {
+      alignItems: "center",
+      position: "relative",
+      top: screenHeight / 1.6,
+    },
+  },
 });
