@@ -66,6 +66,7 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
             {options.map((option) => (
               <View key={option.id}>
                 <TouchableHighlight
+                 testID={`button${option.choiceLetter}`}
                   onPress={() => handleAnswerSelection(option)}
                   underlayColor={option.choiceLetter === "A" ? "green" : "red"}
                   style={[
