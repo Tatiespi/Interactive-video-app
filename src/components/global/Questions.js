@@ -1,8 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Button as RNButton } from "react-native";
-import { styles } from "./Style";
 // QuestionWithAnswers.js
-
 import React, { useState } from "react";
 import { View, Text, TouchableHighlight } from "react-native";
 import { styles } from "./Style";
