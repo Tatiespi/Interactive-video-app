@@ -4,6 +4,7 @@ import { View, StyleSheet, Dimensions } from "react-native";
 import Navbar from "./src/components/global/Navbar";
 import Home from "./src/components/global/Home";
 import DragDrop from "./src/components/custom/Drag&Drop";
+import DragDropLight from "./src/components/custom/Drag&DropLight.js";
 import QuestionWithAnswers from "./src/components/global/Questions";
 import FeedBack from "./src/components/global/Feedback.js";
 import { styles } from "./src/components/global/Style.js";
@@ -36,19 +37,19 @@ export default function App() {
 
   return (
     <View style={styles.generalStyles.container}>
-      {/* {showFeedback ? (
+      {showFeedback ? (
           <FeedBack
             textToShow={answerResult ? objectsPositiveText : objectsNegativeText}
             isRightAnswer={answerResult ? true : false}
             onRetryGame={handleRetryGame}
           ></FeedBack>
         ) : (
-          <DragDrop
+          <DragDropLight
             onFeedbackChange={(value) => setShowFeedback(value)}
             onAnswerChange={(value) => setAnswerResult(value)}
           />
-        )} */}
-      {showFeedback ? (
+        )}
+      {/* {showFeedback ? (
         <FeedBack
           textToShow={
             answerResult ? questionsPositiveText : questionsNegativeText
@@ -61,7 +62,7 @@ export default function App() {
           onFeedbackChange={(value) => setShowFeedback(value)}
           onAnswerChange={(value) => setAnswerResult(value)}
         ></QuestionWithAnswers>
-      )}
+      )} */}
     </View>
   );
 }
