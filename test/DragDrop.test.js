@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import DragDrop from './Drag&Drop';
+import DragDrop from '../src/components/custom/Drag&Drop';
 
 // Agrupa una serie de pruebas relacionadas con el componente `DragDrop`.
 describe('DragDrop Component', () => {
