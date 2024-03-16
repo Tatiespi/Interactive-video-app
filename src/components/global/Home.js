@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { StyleSheet, Text, Button, View } from "react-native";
 import { Video, ResizeMode } from "expo-av";
-import testVideo from "../../../assets/test-video.mp4";
 
 export default function Home({ videoUrl }) {
   const video = React.useRef(null);

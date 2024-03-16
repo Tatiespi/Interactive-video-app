@@ -12,64 +12,48 @@ export const styles = StyleSheet.create({
   questionsStyles: {
     container: {
       position: "absolute",
-      top: screenHeight / 2 - screenHeight * 0.7 / 2,
-      left: screenWidth / 2 - screenWidth * 0.6 / 2,
-      width: screenWidth * 0.6,
+      top: screenHeight / 2 - screenHeight * 0.5,
+      left: screenWidth / 2 - screenWidth * 0.43,
+      width: screenWidth * 0.8,
       height: screenHeight * 0.75,
       backgroundColor: "rgba(128, 128, 128, 0.85)",
-      flexDirection: "column",  // Modificado a "column" para que el texto esté encima de los botones
-      justifyContent: "center",
+      flexDirection: "row", // Cambiado a "row" para alinear elementos horizontalmente
+      justifyContent: "space-between", // Ajusta el espacio entre los elementos
       alignItems: "center",
       borderBottomLeftRadius: 30,
       borderBottomRightRadius: 30,
+      paddingHorizontal: 20, // Añadido padding horizontal para separar los elementos del borde
     },
     questionContainer: {
-      marginLeft: 270,
-      marginBottom: -150,  // Ajusta el espacio entre el texto y las opciones
-      marginTop: 20,  // Ajusta este valor para que el texto baje hacia abajo
-   },
-   questionText: {
-      fontSize: 18,  // Ajusta el tamaño de fuente del texto de la pregunta
-      color: "white",
-      textAlign: "center"
-   },
-    questionsButtons: {
-      marginRight: 100,
-      color: "white",
-      
-
+      flex: 1, // Ajusta el tamaño del contenedor de la pregunta para que ocupe el espacio disponible
+      marginRight: 20, // Ajusta el margen derecho para separar del contenedor de respuestas
     },
-    
-     answersContainer: {
-      marginTop: 50, // Ajusta este valor según sea necesario para la separación vertical
-      
+    questionText: {
+      fontSize: 18,
+      color: "white",
+      textAlign: "center",
     },
-    
+    answersContainer: {
+      flex: 1, // Ajusta el tamaño del contenedor de respuestas para que ocupe el espacio disponible
+    },
     optionText: {
       flexShrink: 1,
-      marginRight: 120, // O ajusta según tu preferencia
-      marginTop: 4,
-      fontSize: 10, // Ajusta según tu preferencia
-      
+      fontSize: 14, // Ajusta el tamaño de fuente según tu preferencia
     },
-    
     option: {
       flexDirection: "row",
-      marginVertical: 20, // Modifica este valor según sea necesario para la separación vertical
-      marginTop: 10, // Ajusta este valor según sea necesario para la posición vertical de las letras
-      
+      alignItems: "center", // Centra verticalmente el texto con las letras
+      marginBottom: 10, // Ajusta este valor según tu preferencia
     },
-   
     optionLetterContainer: {
-      marginRight: 5,
-      marginLeft: 0,  // Ajusta el valor del margen izquierdo
+      marginRight: 10, // Ajusta el margen derecho para separar las letras del texto
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: "orange",
       borderRadius: 15,
       width: 30,
       height: 30,
-      
+      backgroundColor: "#DF8A58",
     },
     optionCorrect: {
       backgroundColor: "green",
@@ -77,7 +61,6 @@ export const styles = StyleSheet.create({
     optionIncorrect: {
       backgroundColor: "red",
     },
-    
   },
   dragDropStyles: {
     container: {
@@ -175,7 +158,6 @@ export const styles = StyleSheet.create({
     text: {
       paddingHorizontal: 25,
       color: "#FFFFFF",
-      textTransform: "uppercase",
       textAlign: "center",
       fontSize: 18,
       fontWeight: 700,
@@ -186,5 +168,11 @@ export const styles = StyleSheet.create({
       top: screenHeight / 1.6,
     },
   },
+  videoStyles: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
 });
-

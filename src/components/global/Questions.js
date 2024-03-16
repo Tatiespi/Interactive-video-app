@@ -11,17 +11,17 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
     {
       id: "1",
       choiceLetter: "A",
-      text: "REDUCIR LA HUELLA DE CARBONO AL EVITAR EL USO DE VEHÍCULOS MOTORIZADOS",
+      text: "Reducir el uso de agua potable en el riego de plantas.",
     },
     {
       id: "2",
       choiceLetter: "B",
-      text: "AUMENTAR LA CONGESTIÓN VEHICULAR EN LAS CALLES",
+      text: "Aumentar la cantidad de agua en los tanques de almacenamiento.",
     },
     {
       id: "3",
       choiceLetter: "C",
-      text: "CONTRIBUIR AL CALENTAMIENTO GLOBAL AL EMITIR MENOS GASES DE EFECTO INVERNADERO",
+      text: "Evitar la formación de charcos en el suelo.",
     },
   ];
 
@@ -58,7 +58,8 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
         <>
           <View style={styles.questionsStyles.questionContainer}>
             <Text style={styles.questionsStyles.questionText}>
-              ¿CUÁL ES UNO DE LOS PRINCIPALES BENEFICIOS DE ANDAR EN BICICLETA?
+              ¿Cuál es el propósito principal de recolectar agua de lluvia para
+              riego?
             </Text>
           </View>
 
@@ -66,7 +67,7 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
             {options.map((option) => (
               <View key={option.id}>
                 <TouchableHighlight
-                 testID={`button${option.choiceLetter}`}
+                  testID={`button${option.choiceLetter}`}
                   onPress={() => handleAnswerSelection(option)}
                   underlayColor={option.choiceLetter === "A" ? "green" : "red"}
                   style={[
