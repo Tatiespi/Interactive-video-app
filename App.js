@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import Navbar from "./src/components/global/Navbar";
 import Home from "./src/components/global/Home";
@@ -8,10 +8,28 @@ import DragDropLight from "./src/components/custom/Drag&DropLight.js";
 import QuestionWithAnswers from "./src/components/global/Questions";
 import FeedBack from "./src/components/global/Feedback.js";
 import { styles } from "./src/components/global/Style.js";
+import { Video } from "expo-av";
+import * as ScreenOrientation from "expo-screen-orientation";
 export default function App() {
-  const [videoUrl, setVideoUrl] = useState(
-    "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
-  );
+  const video = useRef(null);
+  const [orientationIsLandscape, setOrientation] = useState(true);
+
+  async function changeScreenOrientation() {
+    if (orientationIsLandscape == true) {
+      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+    } else if (orientationIsLandscape == false) {
+      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    }
+  }
+
+  const toggleOrientation = () => {
+    setOrientation(orientationIsLandscape);
+    changeScreenOrientation();
+  };
+
+  useEffect(() => {
+    toggleOrientation();
+  }, []);
 
   // Textos para arrastre de objetos
   const objectsNegativeText =
@@ -25,6 +43,12 @@ export default function App() {
   const questionsPositiveText =
     "¡Muy bien, Santiago! Uno de los principales beneficios ambientales de andar en bicicleta es reducir la huella de carbono al evitar el uso de vehículos motorizados. Al elegir la bicicleta como medio de transporte, estás contribuyendo activamente a la reducción de las emisiones de gases de efecto invernadero y al cuidado del medio ambiente. ¡Excelente elección!";
 
+  // Textos para preguntas sobre el agua
+  const waterQuestionsNegativeText =
+    " Esa no es la respuesta correcta, Santiago. El propósito principal de recolectar agua de lluvia para riego es reducir el uso de agua potable en el riego de plantas. Esto nos ayuda a conservar los recursos hídricos y hacer un uso más eficiente del agua disponible. Te animo a que sigas aprendiendo sobre prácticas sostenibles como esta. ¡Sigue adelante!";
+  const waterQuestionsPositiveText =
+    "¡Correcto, Santiago! El propósito principal de recolectar agua de lluvia para riego es reducir el uso de agua potable en el riego de plantas. Al utilizar agua de lluvia, podemos conservar los recursos hídricos y hacer un uso más eficiente del agua disponible. ¡Excelente trabajo!";
+
   const handleVideoChange = (newVideoUrl) => {
     setVideoUrl(newVideoUrl);
   };
@@ -37,7 +61,17 @@ export default function App() {
 
   return (
     <View style={styles.generalStyles.container}>
-      {showFeedback ? (
+      <Video
+        style={styles.videoStyles}
+        ref={video}
+        source={{
+          uri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+        }}
+        useNativeControls={true}
+        resizeMode='contain'
+        isLooping
+      ></Video>
+      {/* {showFeedback ? (
           <FeedBack
             textToShow={answerResult ? objectsPositiveText : objectsNegativeText}
             isRightAnswer={answerResult ? true : false}
@@ -52,7 +86,9 @@ export default function App() {
       {/* {showFeedback ? (
         <FeedBack
           textToShow={
-            answerResult ? questionsPositiveText : questionsNegativeText
+            answerResult
+              ? waterQuestionsPositiveText
+              : waterQuestionsNegativeText
           }
           isRightAnswer={answerResult ? true : false}
           onRetryGame={handleRetryGame}
