@@ -71,7 +71,7 @@ export default function App() {
         resizeMode='contain'
         isLooping
       ></Video>
-      {/* {showFeedback ? (
+      {showFeedback ? (
           <FeedBack
             textToShow={answerResult ? objectsPositiveText : objectsNegativeText}
             isRightAnswer={answerResult ? true : false}

@@ -7,16 +7,13 @@ export default function DragDropLight({ onFeedbackChange, onAnswerChange }) {
   const [dropped, setDropped] = useState(true);
   const [frameInX, setFrameInX] = useState("");
   const [frameInY, setFrameInY] = useState("");
-  const [answerColor, setAnswerColor] = useState("rgba(132, 70, 33, 0.8)");
+  const [answerColor, setAnswerColor] = useState("rgba(255, 255, 255, 0.8)");
   const [showLed, setShowLed] = useState(true);
   const [showLight, setShowLight] = useState(true);
-  const [showGround, setShowGround] = useState(true);
-  const [showWater, setShowWater] = useState(true);
-  const [order, setOrder] = useState(0);
   const [actualImage, setActualImage] = useState("");
   const images = {
-    bombilla: require("../../../assets/bombilla.png"),
-    led: require("../../../assets/bombillaled.png"),
+    bombilla: require("../../../assets/bombilla-volteada.png"),
+    led: require("../../../assets/luz-led-volteada.png"),
   };
 
   // Ref to store the reference to draggable components
@@ -66,31 +63,18 @@ export default function DragDropLight({ onFeedbackChange, onAnswerChange }) {
   };
   return (
     <View style={styles.dragDropStyles.container}>
-      {/* Instrucciones de la pregunta */}
-      <Text style={styles.dragDropStyles.tittleText}>
-        CAMBIA LA BOMBILLA VIEJA POR UNA BOMBILLA LED PARA AHORRAR ENERGÍA Y
-        AYUDAR AL MEDIO AMBIENTE
-      </Text>
-      <View style={styles.dragDropStyles.dragDropContainer}>
-        {/* Aquí van las imágenes */}
-        <View style={styles.dragDropStyles.imagesContainer}>
+      <View style={styles.dragDropStyles.lightDragDropContainer}>
+        {/* Aquí va la imagen de la bombilla normal */}
+        <View style={styles.dragDropStyles.lightImagesContainer}>
           <View style={styles.dragDropStyles.imageGroupContainer}>
             <View style={styles.dragDropStyles.imagePair}>
               {showLight && (
-                <Draggable onDragRelease={(e, data) => handleDrop(e, data, 2)}>
+                <Draggable
+                  style={styles.dragDropStyles.dragItem}
+                  onDragRelease={(e, data) => handleDrop(e, data, 2)}
+                >
                   <Image
-                    source={require("../../../assets/bombilla.png")}
-                    style={styles.dragDropStyles.image}
-                  />
-                </Draggable>
-              )}
-            </View>
-            <View style={styles.dragDropStyles.verticalSpace} />
-            <View style={styles.dragDropStyles.imagePair}>
-              {showLed && (
-                <Draggable onDragRelease={(e, data) => handleDrop(e, data, 1)}>
-                  <Image
-                    source={require("../../../assets/bombillaled.png")}
+                    source={require("../../../assets/bombilla-volteada.png")}
                     style={styles.dragDropStyles.image}
                   />
                 </Draggable>
@@ -104,16 +88,14 @@ export default function DragDropLight({ onFeedbackChange, onAnswerChange }) {
             this.frame = ref;
           }}
           style={[
-            styles.dragDropStyles.frame,
+            styles.dragDropStyles.lightFrame,
             { backgroundColor: answerColor },
           ]}
         >
-          <Draggable>
-            <Image
-              style={styles.dragDropStyles.image}
-              source={require("../../../assets/bombilladañada.png")}
-            />
-          </Draggable>
+          <Image
+            source={require("../../../assets/lampara-de-techo-mono.png")}
+            style={styles.dragDropStyles.lightFrameImage}
+          />
           {dropped && (
             <Image
               source={actualImage ? images[actualImage] : null}
@@ -121,14 +103,29 @@ export default function DragDropLight({ onFeedbackChange, onAnswerChange }) {
             />
           )}
         </View>
-        {/* Aqui va la papelera */}
-        <View>
-          <Image
-            style={styles.dragDropStyles.image}
-            source={require("../../../assets/papelera.png")}
-          />
+        {/* Aqui va la bombilla led */}
+        <View style={styles.dragDropStyles.imagesContainer}>
+          <View style={styles.dragDropStyles.imageGroupContainer}>
+            <View style={styles.dragDropStyles.imagePair}>
+              {showLed && (
+                <Draggable
+                  style={styles.dragDropStyles.dragItem}
+                  onDragRelease={(e, data) => handleDrop(e, data, 1)}
+                >
+                  <Image
+                    source={require("../../../assets/luz-led-volteada.png")}
+                    style={styles.dragDropStyles.image}
+                  />
+                </Draggable>
+              )}
+            </View>
+          </View>
         </View>
       </View>
+      {/* Instrucciones de la pregunta */}
+      <Text style={styles.dragDropStyles.tittleText}>
+        Arrastra el bombillo correcto a la zona para su instalación
+      </Text>
     </View>
   );
 }
