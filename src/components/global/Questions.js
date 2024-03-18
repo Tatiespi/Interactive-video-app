@@ -1,9 +1,13 @@
-// QuestionWithAnswers.js
 import React, { useState } from "react";
 import { View, Text, TouchableHighlight } from "react-native";
 import { styles } from "./Style";
 
-const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
+const QuestionWithAnswers = ({
+  onAnswerChange,
+  onFeedbackChange,
+  showActivity,
+  onChangeVideo
+}) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [visible, setVisible] = useState(true);
 
@@ -34,6 +38,7 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
     if (option.choiceLetter == "A") {
       onAnswerChange(true);
       onFeedbackChange(true);
+      onChangeVideo(1);
     } else {
       onAnswerChange(false);
       onFeedbackChange(true);
@@ -53,7 +58,12 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
   // };
 
   return (
-    <View style={styles.questionsStyles.container}>
+    <View
+      style={[
+        styles.questionsStyles.container,
+        showActivity ? null : { display: "none" },
+      ]}
+    >
       {visible && (
         <>
           <View style={styles.questionsStyles.questionContainer}>

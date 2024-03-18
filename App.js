@@ -1,35 +1,13 @@
-// App.js
 import React, { useState, useRef, useEffect } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import Navbar from "./src/components/global/Navbar";
 import Home from "./src/components/global/Home";
+import CurrentVideo from "./src/components/global/CurrentVideo.js";
 import DragDrop from "./src/components/custom/Drag&Drop";
-import QuestionWithAnswers from "./src/components/global/Questions";
+import Questions from "./src/components/global/Questions";
 import FeedBack from "./src/components/global/Feedback.js";
 import { styles } from "./src/components/global/Style.js";
-import { Video } from "expo-av";
-import * as ScreenOrientation from "expo-screen-orientation";
 export default function App() {
-  const video = useRef(null);
-  const [orientationIsLandscape, setOrientation] = useState(true);
-
-  async function changeScreenOrientation() {
-    if (orientationIsLandscape == true) {
-      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
-    } else if (orientationIsLandscape == false) {
-      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
-    }
-  }
-
-  const toggleOrientation = () => {
-    setOrientation(orientationIsLandscape);
-    changeScreenOrientation();
-  };
-
-  useEffect(() => {
-    toggleOrientation();
-  }, []);
-
   // Textos para arrastre de objetos
   const objectsNegativeText =
     "Parece que hubo un pequeño contratiempo. Recuerda que el orden de los pasos para plantar un árbol es crucial para asegurar su crecimiento saludable. Te animo a que revises nuevamente los pasos y vuelvas a intentarlo. ¡No te desanimes, cada intento nos acerca más a un mundo más verde y sostenible";
@@ -53,35 +31,29 @@ export default function App() {
   };
   const [showFeedback, setShowFeedback] = useState(false);
   const [answerResult, setAnswerResult] = useState(true);
+  const [showActivity, setShowActivity] = useState(false);
+  const [nextVideo, setNextVideo] = useState(0);
   const handleRetryGame = () => {
     // Reiniciar el estado del juego aquí
     setShowFeedback(false);
   };
+  const handleVideoUpdates = (updates) => {
+    setShowActivity(updates.isPaused);
+  };
+  const handleChangeVideo = (videoId) => {
+    setNextVideo(videoId);
+  };
+
+  useEffect(() => {
+    const hideFeedback = setTimeout(() => {
+      answerResult ? setShowFeedback(false) : setShowFeedback(true);
+    }, 3500);
+    return () => clearTimeout(hideFeedback);
+  }, [answerResult]);
 
   return (
     <View style={styles.generalStyles.container}>
-      <Video
-        style={styles.videoStyles}
-        ref={video}
-        source={{
-          uri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
-        }}
-        useNativeControls={true}
-        resizeMode='contain'
-        isLooping
-      ></Video>
-      {/* {showFeedback ? (
-          <FeedBack
-            textToShow={answerResult ? objectsPositiveText : objectsNegativeText}
-            isRightAnswer={answerResult ? true : false}
-            onRetryGame={handleRetryGame}
-          ></FeedBack>
-        ) : (
-          <DragDrop
-            onFeedbackChange={(value) => setShowFeedback(value)}
-            onAnswerChange={(value) => setAnswerResult(value)}
-          />
-        )} */}
+      <CurrentVideo onVideoUpdates={handleVideoUpdates} nextVideo={nextVideo} />
       {showFeedback ? (
         <FeedBack
           textToShow={
@@ -93,10 +65,12 @@ export default function App() {
           onRetryGame={handleRetryGame}
         ></FeedBack>
       ) : (
-        <QuestionWithAnswers
+        <Questions
+          showActivity={showActivity}
+          onChangeVideo={handleChangeVideo}
           onFeedbackChange={(value) => setShowFeedback(value)}
           onAnswerChange={(value) => setAnswerResult(value)}
-        ></QuestionWithAnswers>
+        ></Questions>
       )}
     </View>
   );
