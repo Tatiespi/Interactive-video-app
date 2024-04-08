@@ -12,8 +12,8 @@ export default function DragDropLight({ onFeedbackChange, onAnswerChange }) {
   const [showLight, setShowLight] = useState(true);
   const [actualImage, setActualImage] = useState("");
   const images = {
-    bombilla: require("../../../assets/bombilla-volteada.png"),
-    led: require("../../../assets/luz-led-volteada.png"),
+    bombilla: require("../../../assets/bombilla-volteada-encendida.png"),
+    led: require("../../../assets/luz-led-volteada-encendida.png"),
   };
 
   // Ref to store the reference to draggable components
@@ -48,15 +48,19 @@ export default function DragDropLight({ onFeedbackChange, onAnswerChange }) {
           setAnswerColor("green");
           setShowLed(false);
           setActualImage("led");
-          onFeedbackChange(true);
-          onAnswerChange(true);
+          setTimeout(() => {
+            onFeedbackChange(true);
+            onAnswerChange(true);
+          }, 2000);
         } else {
           setDropped(true);
           setAnswerColor("red");
           setShowLight(false);
           setActualImage("bombilla");
-          onFeedbackChange(true);
-          onAnswerChange(false);
+          setTimeout(() => {
+            onFeedbackChange(true);
+            onAnswerChange(false);
+          }, 2000);
         }
       }
     }
@@ -93,13 +97,13 @@ export default function DragDropLight({ onFeedbackChange, onAnswerChange }) {
           ]}
         >
           <Image
-            source={require("../../../assets/lampara-de-techo-mono.png")}
+            source={require("../../../assets/plafon.png")}
             style={styles.dragDropStyles.lightFrameImage}
           />
           {dropped && (
             <Image
               source={actualImage ? images[actualImage] : null}
-              style={styles.dragDropStyles.image}
+              style={styles.dragDropStyles.feedbackImage}
             />
           )}
         </View>

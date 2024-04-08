@@ -110,11 +110,20 @@ export const styles = StyleSheet.create({
       marginLeft: 13,
       marginTop: 7,
     },
-    lightFrameImage: {
+    feedbackImage:{
       width: 80,
       height: 80,
       resizeMode: "contain",
-      marginTop: 35
+      marginLeft: 0,
+      marginTop: 130,
+      position: "relative"
+    },
+    lightFrameImage: {
+      width: 110,
+      height: 110,
+      resizeMode: "contain",
+      marginTop: 0,
+      position: "absolute",
     },
     frameImage: {
       width: 185,
