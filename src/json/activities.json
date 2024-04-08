@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "type": "question",
+    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+    "text": "¿Cuál es el propósito principal de recolectar agua de lluvia para riego?",
+    "options": [
+      {
+        "id": "1",
+        "letter": "A",
+        "text": "Reducir el uso de agua potable en el riego de plantas.",
+        "isCorrect": true
+      },
+      {
+        "id": "2",
+        "letter": "B",
+        "text": "Aumentar la cantidad de agua en los tanques de almacenamiento.",
+        "isCorrect": false
+      },
+      {
+        "id": "3",
+        "letter": "C",
+        "text": "Evitar la formación de charcos en el suelo.",
+        "isCorrect": false
+      }
+    ],
+    "positiveFeedback": "¡Correcto, Santiago! El propósito principal de recolectar agua de lluvia para riego es reducir el uso de agua potable en el riego de plantas. Al utilizar agua de lluvia, podemos conservar los recursos hídricos y hacer un uso más eficiente del agua disponible. ¡Excelente trabajo!",
+    "negativeFeedback": "Esa no es la respuesta correcta, Santiago. El propósito principal de recolectar agua de lluvia para riego es reducir el uso de agua potable en el riego de plantas. Esto nos ayuda a conservar los recursos hídricos y hacer un uso más eficiente del agua disponible. Te animo a que sigas aprendiendo sobre prácticas sostenibles como esta. ¡Sigue adelante!"
+  },
+  {
+    "id": 2,
+    "text": "¿Cuál es uno de los principales beneficios ambientales de andar en bicicleta?",
+    "type": "question",
+    "videoUrl": "https://docs.evostream.com/sample_content/assets/bun33s.mp4",
+    "options": [
+      {
+        "id": "1",
+        "letter": "A",
+        "text": "Reducir la huella de carbono al evitar el uso de vehículos motorizados.",
+        "isCorrect": true
+      },
+      {
+        "id": "2",
+        "letter": "B",
+        "text": "Aumentar la congestión vehicular en las calles.",
+        "isCorrect": false
+      },
+      {
+        "id": "3",
+        "letter": "C",
+        "text": "Contribuir al calentamiento global al emitir menos gases de efecto invernadero.",
+        "isCorrect": false
+      }
+    ],
+    "positiveFeedback": "¡Muy bien, Santiago! Uno de los principales beneficios ambientales de andar en bicicleta es reducir la huella de carbono al evitar el uso de vehículos motorizados. Al elegir la bicicleta como medio de transporte, estás contribuyendo activamente a la reducción de las emisiones de gases de efecto invernadero y al cuidado del medio ambiente. ¡Excelente elección!",
+    "negativeFeedback": "Lo siento, esa no es la respuesta correcta. Uno de los principales beneficios ambientales de andar en bicicleta es reducir la huella de carbono al evitar el uso de vehículos motorizados. Esto ayuda a disminuir las emisiones de gases de efecto invernadero y a combatir el cambio climático. ¡No te preocupes, sigue aprendiendo sobre los beneficios de la movilidad sostenible!"
+  },
+  {
+    "id": 3,
+    "text": "¿Será que camino o mejor me voy en MIO?",
+    "type": "question",
+    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+    "options": [
+      {
+        "id": "1",
+        "letter": "A",
+        "text": "Icono de caminar",
+        "isCorrect": true
+      },
+      {
+        "id": "2",
+        "letter": "B",
+        "text": "Icono de MIO",
+        "isCorrect": false
+      }
+    ],
+    "positiveFeedback": "¡Genial! Caminar en vez de usar transporte contaminante está súper. ¡Sigue así!",
+    "negativeFeedback": "Comprendo, pero el bus no es lo más ecológico. Caminar es mejor pa' la Tierra. ¡Yo veré!"
+  }
+]

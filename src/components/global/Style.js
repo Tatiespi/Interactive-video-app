@@ -44,6 +44,7 @@ export const styles = StyleSheet.create({
       flexDirection: "row",
       alignItems: "center", // Centra verticalmente el texto con las letras
       marginBottom: 10, // Ajusta este valor según tu preferencia
+      borderRadius: 10,
     },
     optionLetterContainer: {
       marginRight: 10, // Ajusta el margen derecho para separar las letras del texto
@@ -162,7 +163,13 @@ export const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 700,
     },
-    buttonWrapper: {
+    nextButtonWrapper: {
+      alignItems: "center",
+      position: "relative",
+      top: screenHeight / 1.9,
+      left: screenWidth / 3,
+    },
+    retryButtonWrapper: {
       alignItems: "center",
       position: "relative",
       top: screenHeight / 1.6,
