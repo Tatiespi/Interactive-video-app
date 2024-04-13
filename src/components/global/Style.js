@@ -83,10 +83,47 @@ export const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
     },
+    lightFrame: {
+      width: 150,
+      height: 130,
+      borderRadius: 100,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.8,
+      shadowRadius: 8,
+      elevation: 15,
+      marginBottom: 90,
+      alignItems: "center",
+      justifyContent: "center",
+      marginLeft: 80,
+      marginRight: 80,
+      position: "relative"
+    },
+    dragItem: {
+      zIndex: 1,
+      position: "abosolute"
+    },
     image: {
       width: 80,
       height: 80,
       resizeMode: "contain",
+      marginLeft: 13,
+      marginTop: 7,
+    },
+    feedbackImage:{
+      width: 80,
+      height: 80,
+      resizeMode: "contain",
+      marginLeft: 0,
+      marginTop: 130,
+      position: "relative"
+    },
+    lightFrameImage: {
+      width: 110,
+      height: 110,
+      resizeMode: "contain",
+      marginTop: 0,
+      position: "absolute",
     },
     frameImage: {
       width: 185,
@@ -105,9 +142,18 @@ export const styles = StyleSheet.create({
       justifyContent: "center",
       marginRight: 120,
     },
+    lightImagesContainer: {
+      flexDirection: "row",
+      justifyContent: "center",
+      marginRight: 0,
+    },
     imagePair: {
       alignItems: "center",
       flexDirection: "column",
+      backgroundColor: "white",
+      borderRadius: 100,
+      width: 110,
+      height: 100
     },
     feedbackText: {
       textAlign: "center",
@@ -118,6 +164,14 @@ export const styles = StyleSheet.create({
       justifyContent: "space-evenly",
       alignItems: "center",
       marginTop: screenHeight / 14,
+    },
+    lightDragDropContainer: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      marginTop: screenHeight / 14,
+      marginLeft: 120
     },
     tittleText: {
       textAlign: "center",
