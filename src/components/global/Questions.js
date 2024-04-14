@@ -1,39 +1,32 @@
-// QuestionWithAnswers.js
 import React, { useState } from "react";
 import { View, Text, TouchableHighlight } from "react-native";
 import { styles } from "./Style";
+import activitiesJson from '../../json/activities.json'
 
-const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
+const QuestionWithAnswers = ({
+  onAnswerChange,
+  onFeedbackChange,
+  showActivity,
+  onChangeVideo,
+}) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [visible, setVisible] = useState(true);
 
-  const options = [
-    {
-      id: "1",
-      choiceLetter: "A",
-      text: "Reducir el uso de agua potable en el riego de plantas.",
-    },
-    {
-      id: "2",
-      choiceLetter: "B",
-      text: "Aumentar la cantidad de agua en los tanques de almacenamiento.",
-    },
-    {
-      id: "3",
-      choiceLetter: "C",
-      text: "Evitar la formación de charcos en el suelo.",
-    },
-  ];
-
+  // Eliminar redundancias de nombres en questions.
+  // Considerar agregar una propiedad a cada pregunta que defina cuál es la respuesta correcta, para facilitar el control del flujo.
+  // Tener en cuenta que para la selección por iconos hay que usar enlaces o recursos locales
+  let indexToShow = 0;
+  const activities = activitiesJson;
   const handleAnswerSelection = (option) => {
     if (!selectedAnswer) {
       setSelectedAnswer(option);
       setVisible(false);
     }
 
-    if (option.choiceLetter == "A") {
+    if (option.letter == "A") {
       onAnswerChange(true);
       onFeedbackChange(true);
+      onChangeVideo(1);
     } else {
       onAnswerChange(false);
       onFeedbackChange(true);
@@ -44,7 +37,7 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
   //   if (selectedAnswer) {
   //     return (
   //       <Text style={styles.questionsStyles.resultText}>
-  //         ¡Seleccionaste la opción {selectedAnswer.choiceLetter}! {"\n"}
+  //         ¡Seleccionaste la opción {selectedAnswer.letter}! {"\n"}
   //         {selectedAnswer.text}
   //       </Text>
   //     );
@@ -53,27 +46,31 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
   // };
 
   return (
-    <View style={styles.questionsStyles.container}>
+    <View
+      style={[
+        styles.questionsStyles.container,
+        showActivity ? null : { display: "none" },
+      ]}
+    >
       {visible && (
         <>
           <View style={styles.questionsStyles.questionContainer}>
             <Text style={styles.questionsStyles.questionText}>
-              ¿Cuál es el propósito principal de recolectar agua de lluvia para
-              riego?
+              {activities[indexToShow].text}
             </Text>
           </View>
 
           <View style={styles.questionsStyles.answersContainer}>
-            {options.map((option) => (
+            {activities[indexToShow].options.map((option) => (
               <View key={option.id}>
                 <TouchableHighlight
-                  testID={`button${option.choiceLetter}`}
+                  testID={`button${option.letter}`}
                   onPress={() => handleAnswerSelection(option)}
-                  underlayColor={option.choiceLetter === "A" ? "green" : "red"}
+                  underlayColor={option.letter === "A" ? "green" : "red"}
                   style={[
                     styles.questionsStyles.option,
                     selectedAnswer === option &&
-                      (option.choiceLetter === "A"
+                      (option.letter === "A"
                         ? styles.questionsStyles.optionCorrect
                         : styles.questionsStyles.optionIncorrect),
                   ]}
@@ -81,7 +78,7 @@ const QuestionWithAnswers = ({ onAnswerChange, onFeedbackChange }) => {
                   <>
                     <View style={styles.questionsStyles.optionLetterContainer}>
                       <Text style={styles.questionsStyles.optionLetter}>
-                        {option.choiceLetter}
+                        {option.letter}
                       </Text>
                     </View>
                     <Text
