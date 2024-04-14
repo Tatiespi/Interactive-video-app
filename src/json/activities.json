@@ -6,19 +6,19 @@
     "text": "¿Cuál es el propósito principal de recolectar agua de lluvia para riego?",
     "options": [
       {
-        "id": "1",
+        "id": 1,
         "letter": "A",
         "text": "Reducir el uso de agua potable en el riego de plantas.",
         "isCorrect": true
       },
       {
-        "id": "2",
+        "id": 2,
         "letter": "B",
         "text": "Aumentar la cantidad de agua en los tanques de almacenamiento.",
         "isCorrect": false
       },
       {
-        "id": "3",
+        "id": 3,
         "letter": "C",
         "text": "Evitar la formación de charcos en el suelo.",
         "isCorrect": false
@@ -34,19 +34,19 @@
     "videoUrl": "https://docs.evostream.com/sample_content/assets/bun33s.mp4",
     "options": [
       {
-        "id": "1",
+        "id": 1,
         "letter": "A",
         "text": "Reducir la huella de carbono al evitar el uso de vehículos motorizados.",
         "isCorrect": true
       },
       {
-        "id": "2",
+        "id": 2,
         "letter": "B",
         "text": "Aumentar la congestión vehicular en las calles.",
         "isCorrect": false
       },
       {
-        "id": "3",
+        "id": 3,
         "letter": "C",
         "text": "Contribuir al calentamiento global al emitir menos gases de efecto invernadero.",
         "isCorrect": false
@@ -57,18 +57,25 @@
   },
   {
     "id": 3,
+    "type": "dragDropMultiElement",
+    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+    "positiveFeedback": "¡Genial, Santiago! Sembrar árboles es clave pa’ cuidar el ambiente. Seguí así, que vamos por buen camino.",
+    "negativeFeedback": "Dale una repasadita a los pasos, cada intento nos acerca más al objetivo de tener un ambiente más verde"
+  },
+  {
+    "id": 4,
     "text": "¿Será que camino o mejor me voy en MIO?",
     "type": "question",
     "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
     "options": [
       {
-        "id": "1",
+        "id": 1,
         "letter": "A",
         "text": "Icono de caminar",
         "isCorrect": true
       },
       {
-        "id": "2",
+        "id": 2,
         "letter": "B",
         "text": "Icono de MIO",
         "isCorrect": false
@@ -76,5 +83,12 @@
     ],
     "positiveFeedback": "¡Genial! Caminar en vez de usar transporte contaminante está súper. ¡Sigue así!",
     "negativeFeedback": "Comprendo, pero el bus no es lo más ecológico. Caminar es mejor pa' la Tierra. ¡Yo veré!"
+  },
+  {
+    "id": 5,
+    "type": "dragDrop",
+    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+    "positiveFeedback": "¡Así es! Estos bombillos son los justos para recortar energía y darle una mano al ambiente. ¡Sigamos, que esto apenas empieza! ",
+    "negativeFeedback": " No, así no es el cuento. Los bombillos LED son la mejor opción, ya que consumen menos energía y duran más. ¡Dale que la próxima es la buena!"
   }
 ]
