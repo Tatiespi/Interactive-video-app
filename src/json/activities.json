@@ -66,18 +66,20 @@
     "id": 4,
     "text": "¿Será que camino o mejor me voy en MIO?",
     "type": "question",
-    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+    "videoUrl": "https://docs.evostream.com/sample_content/assets/bun33s.mp4",
     "options": [
       {
         "id": 1,
-        "letter": "A",
-        "text": "Icono de caminar",
+        "letter": null,
+        "text": null,
+        "icon": "https://ibb.co/92PdfLy",
         "isCorrect": true
       },
       {
         "id": 2,
-        "letter": "B",
-        "text": "Icono de MIO",
+        "letter": null,
+        "text": null,
+        "icon": "https://ibb.co/TDGft82",
         "isCorrect": false
       }
     ],

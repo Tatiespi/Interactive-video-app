@@ -1,28 +1,18 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Video } from "expo-av";
 import { styles } from "./Style";
 import * as ScreenOrientation from "expo-screen-orientation";
-export default function CurrentVideo({ onVideoUpdates, videoUrl }) {
+export default function CurrentVideo({ onVideoFinished, videoUrl }) {
   const videoRef = useRef(null);
-  let videoUpdates = {
-    isPaused: false,
-  };
   // Set the screen orientation to landscape by default
   ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
 
-  useEffect(() => {
-    // Function to pause the video after x seconds (the amount of seconds must vary depending on the scene).
-    const pauseVideo = setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.pauseAsync();
-        videoUpdates.isPaused = true;
-        onVideoUpdates(videoUpdates);
-      }
-    }, 10000);
-
-    // Clear the timeout when the component unmounts or when the video is paused manually
-    return () => clearTimeout(pauseVideo);
-  }, []);
+  const handlePlaybackStatusUpdate = (status) => {
+    if (status.didJustFinish) {
+      // If video has finished playing, send a callback to the App component.
+      onVideoFinished(true);
+    }
+  };
 
   return (
     <Video
@@ -31,10 +21,11 @@ export default function CurrentVideo({ onVideoUpdates, videoUrl }) {
       source={{
         uri: videoUrl,
       }}
+      onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
       useNativeControls={false}
       shouldPlay={true}
       resizeMode='cover'
-      isLooping
+      isLooping={false}
     />
   );
 }
