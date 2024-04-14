@@ -4,6 +4,7 @@ import CurrentVideo from "./src/components/global/CurrentVideo.js";
 import DragDrop from "./src/components/custom/Drag&Drop.js";
 import Questions from "./src/components/global/Questions.js";
 import FeedBack from "./src/components/global/Feedback.js";
+import DragDropLight from "./src/components/custom/Drag&DropLight.js";
 import activitiesJson from "./src/json/activities.json";
 import { styles } from "./src/components/global/Style.js";
 import CurrentActivity from "./src/components/global/CurrentActivity.js";
@@ -18,6 +19,7 @@ export default function App() {
   };
   const handleNextQuestion = () => {
     setActivityIndex(activityIndex + 1);
+    console.log(activities[activityIndex]);
   };
 
   useEffect(() => {
@@ -36,6 +38,7 @@ export default function App() {
       />
       {/* Current video playing end */}
       {/* Current activity appearing */}
+      {/* <DragDropLight/> */} 
       <CurrentActivity
         currentActivityInfo={activities[activityIndex]}
         onNextQuestion={handleNextQuestion}

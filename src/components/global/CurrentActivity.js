@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { View, Text, TouchableHighlight } from "react-native";
 import { styles } from "./Style";
 import FeedBack from "./Feedback";
+import DragDropLight from "../custom/Drag&DropLight";
+import DragDrop from "../custom/Drag&Drop";
 
 const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
   const [showFeedback, setShowFeedback] = useState(false);
@@ -18,57 +20,62 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
     onNextQuestion();
     setShowFeedback(false);
   };
+  const activities = {
+    question: (
+      <View style={[styles.questionsStyles.container]}>
+        <View style={styles.questionsStyles.questionContainer}>
+          <Text style={styles.questionsStyles.questionText}>
+            {currentActivityInfo.text}
+          </Text>
+        </View>
+
+        <View style={styles.questionsStyles.answersContainer}>
+          {currentActivityInfo.options?.map((option) => (
+            <View key={option.id}>
+              <TouchableHighlight
+                testID={`button${option.letter}`}
+                onPress={() => handleAnswerSelection(option)}
+                underlayColor={option.isCorrect ? "green" : "red"}
+                style={[styles.questionsStyles.option]}
+              >
+                <>
+                  <View style={styles.questionsStyles.optionLetterContainer}>
+                    <Text style={styles.questionsStyles.optionLetter}>
+                      {option.letter}
+                    </Text>
+                  </View>
+                  <Text
+                    style={styles.questionsStyles.optionText}
+                    numberOfLines={3}
+                  >
+                    {option.text}
+                  </Text>
+                </>
+              </TouchableHighlight>
+            </View>
+          ))}
+        </View>
+      </View>
+    ),
+    dragDrop: (
+      <DragDropLight
+        onFeedbackChange={(value) => setShowFeedback(value)}
+        onAnswerChange={(value) => setIsRightAnswer(value)}
+      />
+    ),
+    dragDropMultiElement: (
+      <DragDrop
+        onFeedbackChange={(value) => setShowFeedback(value)}
+        onAnswerChange={(value) => setIsRightAnswer(value)}
+      />
+    ),
+  };
   return (
     // General container
-    <View>
+    <View style={styles.generalStyles.container}>
       {!showFeedback && (
-        <View>
-          {
-            // Questions case container
-            currentActivityInfo.type === "question" ? (
-              <View style={[styles.questionsStyles.container]}>
-                <View style={styles.questionsStyles.questionContainer}>
-                  <Text style={styles.questionsStyles.questionText}>
-                    {currentActivityInfo.text}
-                  </Text>
-                </View>
-
-                <View style={styles.questionsStyles.answersContainer}>
-                  {currentActivityInfo.options.map((option) => (
-                    <View key={option.id}>
-                      <TouchableHighlight
-                        testID={`button${option.letter}`}
-                        onPress={() => handleAnswerSelection(option)}
-                        underlayColor={option.isCorrect ? "green" : "red"}
-                        style={[styles.questionsStyles.option]}
-                      >
-                        <>
-                          <View
-                            style={styles.questionsStyles.optionLetterContainer}
-                          >
-                            <Text style={styles.questionsStyles.optionLetter}>
-                              {option.letter}
-                            </Text>
-                          </View>
-                          <Text
-                            style={styles.questionsStyles.optionText}
-                            numberOfLines={3}
-                          >
-                            {option.text}
-                          </Text>
-                        </>
-                      </TouchableHighlight>
-                    </View>
-                  ))}
-                </View>
-              </View>
-            ) : (
-              // Questions end
-              // Drag & Drop case container
-              <View></View>
-              // Drag & Drop endDrag & Drop end
-            )
-          }
+        <View style={styles.generalStyles.container}>
+          {activities[currentActivityInfo.type]}
         </View>
       )}
       {/* Feedback for the current activity */}
