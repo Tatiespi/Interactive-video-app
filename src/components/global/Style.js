@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     },
     questionText: {
       fontSize: 18,
+      fontWeight: "bold",
       color: "white",
       textAlign: "center",
     },
@@ -61,6 +62,28 @@ export const styles = StyleSheet.create({
     },
     optionIncorrect: {
       backgroundColor: "red",
+    },
+    iconQuestionGeneralContainer: {
+      position: "absolute",
+      top: screenHeight / 2 - screenHeight * 0.5,
+      left: screenWidth / 2 - screenWidth * 0.43,
+      width: screenWidth * 0.8,
+      height: screenHeight * 0.75,
+      backgroundColor: "rgba(128, 128, 128, 0.85)",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      borderBottomLeftRadius: 30,
+      borderBottomRightRadius: 30,
+    },
+    iconAnswersContainer: {
+      display: "flex",
+      flexDirection: "row",
+      marginTop: 40,
+    },
+    iconOptionContainer: {
+      display: "flex",
+      marginHorizontal: 35,
     },
   },
   dragDropStyles: {
@@ -98,11 +121,11 @@ export const styles = StyleSheet.create({
       justifyContent: "center",
       marginLeft: 80,
       marginRight: 80,
-      position: "relative"
+      position: "relative",
     },
     dragItem: {
       zIndex: 1,
-      position: "abosolute"
+      position: "abosolute",
     },
     image: {
       width: 80,
@@ -111,13 +134,13 @@ export const styles = StyleSheet.create({
       marginLeft: 13,
       marginTop: 7,
     },
-    feedbackImage:{
+    feedbackImage: {
       width: 80,
       height: 80,
       resizeMode: "contain",
       marginLeft: 0,
       marginTop: 130,
-      position: "relative"
+      position: "relative",
     },
     lightFrameImage: {
       width: 110,
@@ -154,7 +177,7 @@ export const styles = StyleSheet.create({
       backgroundColor: "white",
       borderRadius: 100,
       width: 110,
-      height: 100
+      height: 100,
     },
     feedbackText: {
       textAlign: "center",
@@ -172,7 +195,7 @@ export const styles = StyleSheet.create({
       justifyContent: "space-evenly",
       alignItems: "center",
       marginTop: screenHeight / 14,
-      marginLeft: 120
+      marginLeft: 120,
     },
     tittleText: {
       textAlign: "center",

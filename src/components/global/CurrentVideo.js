@@ -1,40 +1,37 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Video } from "expo-av";
 import { styles } from "./Style";
 import * as ScreenOrientation from "expo-screen-orientation";
-export default function CurrentVideo({ onVideoUpdates, videoUrl }) {
-  const videoRef = useRef(null);
-  let videoUpdates = {
-    isPaused: false,
+import video from "../../../assets/videos/escena-1.mp4";
+export default function CurrentVideo({ onVideoFinished, videoUrl }) {
+  const scenes = {
+    escena_1: require("../../../assets/videos/escena-1.mp4"),
+    escena_2: require("../../../assets/videos/escena-2.mp4"),
+    escena_3: require("../../../assets/videos/escena-3.mp4"),
+    escena_4: require("../../../assets/videos/escena-4.mp4"),
+    escena_5: require("../../../assets/videos/escena-5.mp4"),
   };
+  const videoRef = useRef(null);
   // Set the screen orientation to landscape by default
   ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
 
-  useEffect(() => {
-    // Function to pause the video after x seconds (the amount of seconds must vary depending on the scene).
-    const pauseVideo = setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.pauseAsync();
-        videoUpdates.isPaused = true;
-        onVideoUpdates(videoUpdates);
-      }
-    }, 10000);
-
-    // Clear the timeout when the component unmounts or when the video is paused manually
-    return () => clearTimeout(pauseVideo);
-  }, []);
+  const handlePlaybackStatusUpdate = (status) => {
+    if (status.didJustFinish) {
+      // If video has finished playing, send a callback to the App component.
+      onVideoFinished(true);
+    }
+  };
 
   return (
     <Video
       style={styles.videoStyles}
       ref={videoRef}
-      source={{
-        uri: videoUrl,
-      }}
+      source={scenes[videoUrl]}
+      onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
       useNativeControls={false}
       shouldPlay={true}
       resizeMode='cover'
-      isLooping
+      isLooping={false}
     />
   );
 }
