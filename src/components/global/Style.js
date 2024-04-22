@@ -271,7 +271,12 @@ export const styles = StyleSheet.create({
     },
     buttonImage: {
       width: 75,
-      height: 75
+      height: 75,
+    },
+    buttonInfo: {
+      position: "absolute",
+      top: screenHeight / 1.8,
+      left: screenWidth / 2 - screenWidth * 0.5,
     },
   },
 });
