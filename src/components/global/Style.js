@@ -259,4 +259,19 @@ export const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
+  buttonStyles: {
+    container: {
+      position: "absolute",
+      top: screenHeight / 2 - screenHeight * 0.49,
+      left: screenWidth / 2 - screenWidth * 0.06,
+    },
+    buttonContent: {
+      borderRadius: 50,
+      padding: 4,
+    },
+    buttonImage: {
+      width: 75,
+      height: 75
+    },
+  },
 });
