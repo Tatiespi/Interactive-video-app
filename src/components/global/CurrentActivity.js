@@ -4,6 +4,7 @@ import { styles } from "./Style";
 import FeedBack from "./Feedback";
 import DragDropLight from "../custom/Drag&DropLight";
 import DragDrop from "../custom/Drag&Drop";
+import IconQuestion from "../custom/IconQuestion";
 
 const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
   const [showFeedback, setShowFeedback] = useState(false);
@@ -25,12 +26,12 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
       <View style={[styles.questionsStyles.container]}>
         <View style={styles.questionsStyles.questionContainer}>
           <Text style={styles.questionsStyles.questionText}>
-            {currentActivityInfo.text}
+            {currentActivityInfo?.text}
           </Text>
         </View>
 
         <View style={styles.questionsStyles.answersContainer}>
-          {currentActivityInfo.options?.map((option) => (
+          {currentActivityInfo?.options?.map((option) => (
             <View key={option.id}>
               <TouchableHighlight
                 testID={`button${option.letter}`}
@@ -57,6 +58,13 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
         </View>
       </View>
     ),
+    iconQuestion: (
+      <IconQuestion
+        currentActivityInfo={currentActivityInfo}
+        onFeedbackChange={(value) => setShowFeedback(value)}
+        onAnswerChange={(value) => setIsRightAnswer(value)}
+      />
+    ),
     dragDrop: (
       <DragDropLight
         onFeedbackChange={(value) => setShowFeedback(value)}
@@ -75,7 +83,7 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
     <View style={styles.generalStyles.container}>
       {!showFeedback && (
         <View style={styles.generalStyles.container}>
-          {activities[currentActivityInfo.type]}
+          {activities[currentActivityInfo?.type]}
         </View>
       )}
       {/* Feedback for the current activity */}
@@ -83,8 +91,8 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
         <FeedBack
           textToShow={
             isRightAnswer
-              ? currentActivityInfo.positiveFeedback
-              : currentActivityInfo.negativeFeedback
+              ? currentActivityInfo?.positiveFeedback
+              : currentActivityInfo?.negativeFeedback
           }
           isRightAnswer={isRightAnswer ? true : false}
           onRetryGame={handleRetryGame}

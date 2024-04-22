@@ -9,7 +9,7 @@ describe("<Feedback />", () => {
     // Verifica que el árbol tenga contenido
     expect(tree).toBeTruthy();
 
-    // Verifica que el árbol tenga exactamente un hijo
+    // Verifica que el árbol tenga exactamente dos hijos
     expect(tree.children.length).toBe(2);
 
     // Verifica que el hijo de Feedback tenga el tipo y props esperados

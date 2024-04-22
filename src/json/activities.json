@@ -1,8 +1,22 @@
 [
   {
     "id": 1,
+    "type": "dragDrop",
+    "videoUrl": "escena_1",
+    "positiveFeedback": "¡Así es! Estos bombillos son los justos para recortar energía y darle una mano al ambiente. ¡Sigamos, que esto apenas empieza! ",
+    "negativeFeedback": " No, así no es el cuento. Los bombillos LED son la mejor opción, ya que consumen menos energía y duran más. ¡Dale que la próxima es la buena!"
+  },
+  {
+    "id": 2,
+    "type": "dragDropMultiElement",
+    "videoUrl": "escena_2",
+    "positiveFeedback": "¡Genial, Santiago! Sembrar árboles es clave pa’ cuidar el ambiente. Seguí así, que vamos por buen camino.",
+    "negativeFeedback": "Dale una repasadita a los pasos, cada intento nos acerca más al objetivo de tener un ambiente más verde"
+  },
+  {
+    "id": 3,
     "type": "question",
-    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+    "videoUrl": "escena_3",
     "text": "¿Cuál es el propósito principal de recolectar agua de lluvia para riego?",
     "options": [
       {
@@ -24,14 +38,14 @@
         "isCorrect": false
       }
     ],
-    "positiveFeedback": "¡Correcto, Santiago! El propósito principal de recolectar agua de lluvia para riego es reducir el uso de agua potable en el riego de plantas. Al utilizar agua de lluvia, podemos conservar los recursos hídricos y hacer un uso más eficiente del agua disponible. ¡Excelente trabajo!",
-    "negativeFeedback": "Esa no es la respuesta correcta, Santiago. El propósito principal de recolectar agua de lluvia para riego es reducir el uso de agua potable en el riego de plantas. Esto nos ayuda a conservar los recursos hídricos y hacer un uso más eficiente del agua disponible. Te animo a que sigas aprendiendo sobre prácticas sostenibles como esta. ¡Sigue adelante!"
+    "positiveFeedback": "¡Buena! Recolectar agua de lluvia es clave pa' ahorrar agua potable. Seguí así.",
+    "negativeFeedback": "¡Uy! Esa no era. La idea es usar menos agua potable. Seguí aprendiendo sobre prácticas sostenibles. ¡Vos podés!"
   },
   {
-    "id": 2,
+    "id": 4,
     "text": "¿Cuál es uno de los principales beneficios ambientales de andar en bicicleta?",
     "type": "question",
-    "videoUrl": "https://docs.evostream.com/sample_content/assets/bun33s.mp4",
+    "videoUrl": "escena_4",
     "options": [
       {
         "id": 1,
@@ -52,45 +66,31 @@
         "isCorrect": false
       }
     ],
-    "positiveFeedback": "¡Muy bien, Santiago! Uno de los principales beneficios ambientales de andar en bicicleta es reducir la huella de carbono al evitar el uso de vehículos motorizados. Al elegir la bicicleta como medio de transporte, estás contribuyendo activamente a la reducción de las emisiones de gases de efecto invernadero y al cuidado del medio ambiente. ¡Excelente elección!",
-    "negativeFeedback": "Lo siento, esa no es la respuesta correcta. Uno de los principales beneficios ambientales de andar en bicicleta es reducir la huella de carbono al evitar el uso de vehículos motorizados. Esto ayuda a disminuir las emisiones de gases de efecto invernadero y a combatir el cambio climático. ¡No te preocupes, sigue aprendiendo sobre los beneficios de la movilidad sostenible!"
+    "positiveFeedback": "¡Buena esa! Usar la bici reduce la huella de carbono al evitar el carro. ¡Te veo bien ahí!¡Buena esa! Usar la bici reduce la huella de carbono al evitar el carro. ¡Te veo bien ahí!",
+    "negativeFeedback": "No mi pana, la bici reduce la huella de carbono al no usar carro. Seguí aprendiendo sobre movilidad sostenible. ¡Con toda!"
   },
   {
-    "id": 3,
-    "type": "dragDropMultiElement",
-    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
-    "positiveFeedback": "¡Genial, Santiago! Sembrar árboles es clave pa’ cuidar el ambiente. Seguí así, que vamos por buen camino.",
-    "negativeFeedback": "Dale una repasadita a los pasos, cada intento nos acerca más al objetivo de tener un ambiente más verde"
-  },
-  {
-    "id": 4,
-    "text": "¿Será que camino o mejor me voy en MIO?",
-    "type": "question",
-    "videoUrl": "https://docs.evostream.com/sample_content/assets/bun33s.mp4",
+    "id": 5,
+    "text": "¿Será que camino o mejor me voy en MIO?", 
+    "type": "iconQuestion",
+    "videoUrl": "escena_5",
     "options": [
       {
         "id": 1,
         "letter": null,
         "text": null,
-        "icon": "https://ibb.co/92PdfLy",
+        "icon": "walking_icon",
         "isCorrect": true
       },
       {
         "id": 2,
         "letter": null,
         "text": null,
-        "icon": "https://ibb.co/TDGft82",
+        "icon": "bus_icon",
         "isCorrect": false
       }
     ],
     "positiveFeedback": "¡Genial! Caminar en vez de usar transporte contaminante está súper. ¡Sigue así!",
     "negativeFeedback": "Comprendo, pero el bus no es lo más ecológico. Caminar es mejor pa' la Tierra. ¡Yo veré!"
-  },
-  {
-    "id": 5,
-    "type": "dragDrop",
-    "videoUrl": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
-    "positiveFeedback": "¡Así es! Estos bombillos son los justos para recortar energía y darle una mano al ambiente. ¡Sigamos, que esto apenas empieza! ",
-    "negativeFeedback": " No, así no es el cuento. Los bombillos LED son la mejor opción, ya que consumen menos energía y duran más. ¡Dale que la próxima es la buena!"
   }
 ]
