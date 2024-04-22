@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "type": "dragDrop",
+    "videoUrl": "escena_1",
+    "positiveFeedback": "¡Así es! Estos bombillos son los justos para recortar energía y darle una mano al ambiente. ¡Sigamos, que esto apenas empieza! ",
+    "negativeFeedback": " No, así no es el cuento. Los bombillos LED son la mejor opción, ya que consumen menos energía y duran más. ¡Dale que la próxima es la buena!"
+  },
+  {
+    "id": 2,
+    "type": "dragDropMultiElement",
+    "videoUrl": "escena_2",
+    "positiveFeedback": "¡Genial, Santiago! Sembrar árboles es clave pa’ cuidar el ambiente. Seguí así, que vamos por buen camino.",
+    "negativeFeedback": "Dale una repasadita a los pasos, cada intento nos acerca más al objetivo de tener un ambiente más verde"
+  },
+  {
+    "id": 3,
+    "type": "question",
+    "videoUrl": "escena_3",
+    "text": "¿Cuál es el propósito principal de recolectar agua de lluvia para riego?",
+    "options": [
+      {
+        "id": 1,
+        "letter": "A",
+        "text": "Reducir el uso de agua potable en el riego de plantas.",
+        "isCorrect": true
+      },
+      {
+        "id": 2,
+        "letter": "B",
+        "text": "Aumentar la cantidad de agua en los tanques de almacenamiento.",
+        "isCorrect": false
+      },
+      {
+        "id": 3,
+        "letter": "C",
+        "text": "Evitar la formación de charcos en el suelo.",
+        "isCorrect": false
+      }
+    ],
+    "positiveFeedback": "¡Buena! Recolectar agua de lluvia es clave pa' ahorrar agua potable. Seguí así.",
+    "negativeFeedback": "¡Uy! Esa no era. La idea es usar menos agua potable. Seguí aprendiendo sobre prácticas sostenibles. ¡Vos podés!"
+  },
+  {
+    "id": 4,
+    "text": "¿Cuál es uno de los principales beneficios ambientales de andar en bicicleta?",
+    "type": "question",
+    "videoUrl": "escena_4",
+    "options": [
+      {
+        "id": 1,
+        "letter": "A",
+        "text": "Reducir la huella de carbono al evitar el uso de vehículos motorizados.",
+        "isCorrect": true
+      },
+      {
+        "id": 2,
+        "letter": "B",
+        "text": "Aumentar la congestión vehicular en las calles.",
+        "isCorrect": false
+      },
+      {
+        "id": 3,
+        "letter": "C",
+        "text": "Contribuir al calentamiento global al emitir menos gases de efecto invernadero.",
+        "isCorrect": false
+      }
+    ],
+    "positiveFeedback": "¡Buena esa! Usar la bici reduce la huella de carbono al evitar el carro. ¡Te veo bien ahí!¡Buena esa! Usar la bici reduce la huella de carbono al evitar el carro. ¡Te veo bien ahí!",
+    "negativeFeedback": "No mi pana, la bici reduce la huella de carbono al no usar carro. Seguí aprendiendo sobre movilidad sostenible. ¡Con toda!"
+  },
+  {
+    "id": 5,
+    "text": "¿Será que camino o mejor me voy en MIO?", 
+    "type": "iconQuestion",
+    "videoUrl": "escena_5",
+    "options": [
+      {
+        "id": 1,
+        "letter": null,
+        "text": null,
+        "icon": "walking_icon",
+        "isCorrect": true
+      },
+      {
+        "id": 2,
+        "letter": null,
+        "text": null,
+        "icon": "bus_icon",
+        "isCorrect": false
+      }
+    ],
+    "positiveFeedback": "¡Genial! Caminar en vez de usar transporte contaminante está súper. ¡Sigue así!",
+    "negativeFeedback": "Comprendo, pero el bus no es lo más ecológico. Caminar es mejor pa' la Tierra. ¡Yo veré!"
+  }
+]
