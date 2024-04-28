@@ -101,7 +101,7 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
         ></FeedBack>
       )}
       {/* Feedback end */}
-      <ActivityButton text='Hola mundo' />
+      <ActivityButton />
     </View>
     // General container end
   );
