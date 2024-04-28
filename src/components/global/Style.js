@@ -387,7 +387,29 @@ export const styles = StyleSheet.create({
     },
     guideOptionText: {
       color: "white",
-      fontSize: 18
-    }
+      fontSize: 18,
+    },
+  },
+  guideInfographicStyles: {
+    container: {
+      position: "absolute",
+      width: screenWidth / 1.04,
+      height: screenHeight,
+    },
+    closeBtn: {
+      position: "relative",
+      left: screenWidth / 1.095,
+      top: screenHeight / 14,
+    },
+    nextBtn: {
+      position: "relative",
+      left: screenWidth / 1.18,
+      top: screenHeight / 1.52,
+    },
+    prevBtn: {
+      position: "relative",
+      left: screenWidth / 45,
+      top: screenHeight / 1.5,
+    },
   },
 });
