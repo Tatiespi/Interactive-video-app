@@ -6,6 +6,7 @@ import DragDropLight from "../custom/Drag&DropLight";
 import DragDrop from "../custom/Drag&Drop";
 import IconQuestion from "../custom/IconQuestion";
 import ActivityButton from "../custom/ActivityButton";
+import GuideMenu from "../custom/GuideMenu";
 
 const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
   const [showFeedback, setShowFeedback] = useState(false);
@@ -84,7 +85,8 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
     <View style={styles.generalStyles.container}>
       {!showFeedback && (
         <View style={styles.generalStyles.container}>
-          {activities[currentActivityInfo?.type]}
+          {/* {activities[currentActivityInfo?.type]} */}
+          <GuideMenu />
         </View>
       )}
       {/* Feedback for the current activity */}
@@ -101,7 +103,6 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
         ></FeedBack>
       )}
       {/* Feedback end */}
-      <ActivityButton />
     </View>
     // General container end
   );
