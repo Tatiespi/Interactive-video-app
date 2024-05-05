@@ -11,9 +11,15 @@ const GuideInfographic = ({ infographicReceived, onClose }) => {
       require("../../../assets/heat-infographic-1.png"),
       require("../../../assets/heat-infographic-2.png"),
     ],
-    climate_infographic: ["", ""],
-    fire_infographic: ["", ""],
-    drought_infographic: ["", ""],
+    climate_infographic: [require("../../../assets/cambio.png")],
+    fire_infographic: [
+      require("../../../assets/incendio1.png"),
+      require("../../../assets/incendio2.png"),
+    ],
+    drought_infographic: [
+      require("../../../assets/sequia1.png"),
+      require("../../../assets/sequia2.png"),
+    ],
   };
 
   const handleClose = () => {
@@ -43,7 +49,7 @@ const GuideInfographic = ({ infographicReceived, onClose }) => {
     >
       {/* Close button */}
       <TouchableHighlight
-        testID='close-btn'
+        testID="close-btn"
         onPress={() => handleClose()}
         underlayColor={underlayColor}
         style={styles.guideInfographicStyles.closeBtn}
@@ -52,9 +58,9 @@ const GuideInfographic = ({ infographicReceived, onClose }) => {
       </TouchableHighlight>
 
       {/* Next button */}
-      {infoGraphicKey < 1 && (
+      {infoGraphicKey < 1 && infographicReceived !== 'climate_infographic' && (
         <TouchableHighlight
-          testID='next-btn'
+          testID="next-btn"
           onPress={() => handleNext()}
           underlayColor={underlayColor}
           style={styles.guideInfographicStyles.nextBtn}
@@ -66,7 +72,7 @@ const GuideInfographic = ({ infographicReceived, onClose }) => {
       {/* Previous button */}
       {infoGraphicKey > 0 && (
         <TouchableHighlight
-          testID='pev-btn'
+          testID="pev-btn"
           onPress={() => handlePrev()}
           underlayColor={underlayColor}
           style={styles.guideInfographicStyles.prevBtn}
