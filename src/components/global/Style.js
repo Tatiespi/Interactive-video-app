@@ -412,4 +412,58 @@ export const styles = StyleSheet.create({
       top: screenHeight / 1.5,
     },
   },
+  funFactsStyles:{
+    container: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    factContainer:{
+      width: 450,
+      height: 250,
+      backgroundColor: "rgba(223, 138, 88, 1)",
+      borderRadius: 50,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    },
+    infoButton: {
+      width: 50,
+      height: 50,
+      borderRadius: 50,
+      backgroundColor: "rgba(223, 138, 88, 1)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 30,
+      marginLeft: 780
+    },
+    infoIcon: {
+      fontSize: 30,
+      color: "white",
+      fontWeight: "bold"
+    },
+    triangle: {
+      position: 'absolute',
+      top: -40, 
+      right: -135, 
+      width: 0,
+      height: 0,
+      borderLeftWidth: 0,
+      borderRightWidth: 160,
+      borderBottomWidth: 60,
+      borderLeftColor: 'transparent',
+      borderRightColor: 'transparent',
+      borderBottomColor: 'rgba(223, 138, 88, 1)',
+      transform: [{ rotate: '-30deg' }],
+    },
+    factText: {
+      color: "white",
+      fontWeight: "bold",
+      fontSize: 25,
+      marginLeft: 25,
+      marginRight: 25,
+      textAlign: "center"
+    }
+  },
 });
