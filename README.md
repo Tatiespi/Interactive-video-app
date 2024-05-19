@@ -3,7 +3,7 @@
 <!-- ![Logo de Cambio Calimático](assets/LogoGuia.png) -->
 <p float="left">
   <img src="assets/LogoGuia.png" width="350" />
-  <img src="assets/earthguard-logo-verde.png" width="300" /> 
+  <img src="assets/earthguard-logo-verde.png" width="250" /> 
 </p>
 
 ## Contenido general
