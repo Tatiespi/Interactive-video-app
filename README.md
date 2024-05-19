@@ -1,6 +1,5 @@
 # Narración Transmedia "Cambio Calimático" - Video Interactivo "EarthGuard"
 
-<!-- ![Logo de Cambio Calimático](assets/LogoGuia.png) -->
 <p float="left">
   <img src="assets/LogoGuia.png" width="350" />
   <img src="assets/earthguard-logo-verde.png" width="250" /> 
@@ -61,6 +60,6 @@ Una vez que hayas completado todas las configuraciones, puedes ejecutar el proye
 
 Para usar el proyecto desde las plataformas mencionadas, debes descargar e instalar la aplicación móvil [Expo Go](https://expo.dev/go) en su version de SDK 50.
 
-# Eso es todo!
+# ¡Eso es todo!
 
 ¡Ahora puedes disfrutar de este proyecto!
