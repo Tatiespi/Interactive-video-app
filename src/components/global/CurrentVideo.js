@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Video } from "expo-av";
 import { styles } from "./Style";
 import * as ScreenOrientation from "expo-screen-orientation";
@@ -10,7 +10,6 @@ export default function CurrentVideo({ onVideoFinished, videoUrl }) {
     escena_4: require("../../../assets/videos/escena-4.mp4"),
     escena_5: require("../../../assets/videos/escena-5.mp4"),
   };
-  const videoRef = useRef(null);
   // Set the screen orientation to landscape by default
   ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
 
@@ -24,13 +23,14 @@ export default function CurrentVideo({ onVideoFinished, videoUrl }) {
   return (
     <Video
       style={styles.videoStyles}
-      ref={videoRef}
       source={scenes[videoUrl]}
       onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
       useNativeControls={false}
       shouldPlay={true}
       resizeMode='cover'
       isLooping={false}
+      rate={1}
+      volume={1.5}
     />
   );
 }
