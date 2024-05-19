@@ -2,7 +2,7 @@
   {
     "id": 1,
     "type": "dragDrop",
-    "videoUrl": "escena_2",
+    "videoUrl": "escena_1",
     "positiveFeedback": "¡Así es! Estos bombillos son los justos para recortar energía y darle una mano al ambiente. ¡Sigamos, que esto apenas empieza! ",
     "negativeFeedback": " No, así no es el cuento. Los bombillos LED son la mejor opción, ya que consumen menos energía y duran más. ¡Dale que la próxima es la buena!"
   },
@@ -92,5 +92,9 @@
     ],
     "positiveFeedback": "¡Genial! Caminar en vez de usar transporte contaminante está súper. ¡Sigue así!",
     "negativeFeedback": "Comprendo, pero el bus no es lo más ecológico. Caminar es mejor pa' la Tierra. ¡Yo veré!"
+  },
+  {
+    "id": 6,
+    "type": "infographic"
   }
 ]
