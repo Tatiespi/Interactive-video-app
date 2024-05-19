@@ -9,6 +9,7 @@ export default function CurrentVideo({ onVideoFinished, videoUrl }) {
     escena_3: require("../../../assets/videos/escena-3.mp4"),
     escena_4: require("../../../assets/videos/escena-4.mp4"),
     escena_5: require("../../../assets/videos/escena-5.mp4"),
+    escena_final: require("../../../assets/videos/escena-final.mp4")
   };
   // Set the screen orientation to landscape by default
   ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
@@ -27,9 +28,8 @@ export default function CurrentVideo({ onVideoFinished, videoUrl }) {
       onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
       useNativeControls={false}
       shouldPlay={true}
-      resizeMode='cover'
+      resizeMode='stretch'
       isLooping={false}
-      rate={1}
       volume={1.5}
     />
   );

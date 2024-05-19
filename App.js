@@ -10,6 +10,9 @@ export default function App() {
   const activities = activitiesJson;
   const handleVideoFinished = (videoFinished) => {
     setShowActivity(videoFinished);
+    if (activityIndex === 5) {
+      setActivityIndex(activityIndex + 1);
+    }
   };
   const handleNextQuestion = () => {
     setActivityIndex(activityIndex + 1);
@@ -20,7 +23,7 @@ export default function App() {
     <View style={styles.generalStyles.container}>
       {/* Current video playing */}
       {/* Rendering until the fourth position of the activities JSON, because the fifth one has no video to render */}
-      {activityIndex < 5 && (
+      {activityIndex !== 6 && (
         <CurrentVideo
           videoUrl={activities[activityIndex].videoUrl}
           onVideoFinished={handleVideoFinished}
@@ -28,7 +31,7 @@ export default function App() {
       )}
       {/* Current video playing end */}
       {/* Current activity appearing */}
-      {(showActivity || activityIndex === 5) && (
+      {(showActivity || activityIndex === 6) && (
         <CurrentActivity
           currentActivityInfo={activities[activityIndex]}
           onNextQuestion={handleNextQuestion}

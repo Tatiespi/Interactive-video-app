@@ -255,10 +255,8 @@ export const styles = StyleSheet.create({
   },
   videoStyles: {
     position: "absolute",
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+    width: "100%",
+    height: "100%"
   },
   buttonStyles: {
     container: {
@@ -285,7 +283,7 @@ export const styles = StyleSheet.create({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: "rgba(223, 138, 88, 0.85)",
+      backgroundColor: "rgba(223, 138, 88, 1)",
       flex: 1,
     },
     guideMenuContainer: {
