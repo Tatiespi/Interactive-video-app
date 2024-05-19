@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Video } from "expo-av";
 import { styles } from "./Style";
 import * as ScreenOrientation from "expo-screen-orientation";
-import video from "../../../assets/videos/escena-1.mp4";
 export default function CurrentVideo({ onVideoFinished, videoUrl }) {
   const scenes = {
     escena_1: require("../../../assets/videos/escena-1.mp4"),

@@ -79,14 +79,16 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
         onAnswerChange={(value) => setIsRightAnswer(value)}
       />
     ),
+    // Usar para mostrar la infografía al final del flujo.
+    infographic: <GuideMenu />,
   };
   return (
     // General container
     <View style={styles.generalStyles.container}>
       {!showFeedback && (
         <View style={styles.generalStyles.container}>
-          {/* {activities[currentActivityInfo?.type]} */}
-          <GuideMenu />
+          {activities[currentActivityInfo?.type]}
+          {/* <GuideMenu /> */}
         </View>
       )}
       {/* Feedback for the current activity */}
