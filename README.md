@@ -1,6 +1,10 @@
 # Narración Transmedia "Cambio Calimático" - Video Interactivo "EarthGuard"
 
-![Logo de Cambio Calimático](assets/LogoGuia.png)
+<!-- ![Logo de Cambio Calimático](assets/LogoGuia.png) -->
+<p float="left">
+  <img src="assets/LogoGuia.png" width="100" />
+  <img src="assets/earthguard-logo-verde.png" width="100" /> 
+</p>
 
 ## Contenido general
 
