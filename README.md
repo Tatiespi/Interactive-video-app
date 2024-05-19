@@ -2,7 +2,7 @@
 
 <p float="left">
   <img src="assets/LogoGuia.png" width="350" />
-  <img src="assets/earthguard-logo-verde.png" width="220" /> 
+  <img src="assets/earthguard-logo-verde.png" width="230" /> 
 </p>
 
 ## Contenido general
