@@ -1,61 +1,62 @@
-# Interactive-video-app
+# Narración Transmedia "Cambio Calimático" - Video Interactivo "EarthGuard"
 
-# API for KickStore, the most reliable online sneakers store in LATAM.
+![Logo de Cambio Calimático](assets/LogoGuia.png)
 
-## General content
+## Contenido general
 
-What will you find in this repository?
+¿Qué vas a encontrar en este repositorio?
 
-- Service for obtaining sneakers that are currently in stock.
-- Service for obtaining special prices.
-- MongoDb database configuration.
+- Sistema Multimedia Audiovisual (SMA) realizado usando Expo React Native, que consta de un video interactivo; el cual tiene como objetivo concientizar a los estudiantes de colegio, de grados 10 y 11, de la ciudad de Santiago de Cali, sobre las implicaciones del aumento de la temperatura en dos grados, frente a la edad preindustrial.
 
-The structure of the project was made based on **MVC** architecture; where the **Model** is represented by the Product, the **View** by the routes that bring the information with the help of the services, and the **Controller** by the controllers that return a response based on the information given to the endpoint.
+**Componentes y archivos generales**
 
-## How to use
+- Archivo **activities.json** usado para almacenar toda la información asociada a cada momento del video (escenas, momentos interactivos, infografías, etc).
+- Componente **App.js** usado para renderizar la aplicación general.
+- Componente **CurrentVideo.js** usado para renderizar la escena actual del video interactivo.
+- Componente **CurrentActivity.js** usado para renderizar la actividad o momento interactivo asociado a la escena actual.
+- Componente **GuideMenu.js** usado para renderizar la guía de infografías que aparece al final de la experiencia.
 
-### Install all requirements
+Este SMA funciona en smartphones de gama media-baja y es comedido en el uso de recursos; además, no depende de la red para funcionar.
 
-To clone and run this project, you will need to install:
+# Cómo usar
 
-- [Git](https://git-scm.com/) (comes with [npm](https://www.npmjs.com/))
-- [Node.js](https://nodejs.org/en/download/) (comes with [npm](https://www.npmjs.com/))
+Para clonar y ejecutar este proyecto, tendrás que instalar:
 
-When you complete all the installations, you can clone the repository and install the dependencies:
-bash
-# Clone this repository
-$ git clone https://github.com/danielV1213/kick-store-api
+- [Git](https://git-scm.com/) (viene con [npm](https://www.npmjs.com/))
+- [Node.js](https://nodejs.org/en/download/) (viene con [npm](https://www.npmjs.com/))
 
-# Go into the repository
-$ cd kick-store-api
+Cuando completes todas las instalaciones, puedes clonar el repositorio e instalar las dependencias:
 
-# Install dependencies
-$ npm install
-## Configure environment variables
+## Clona este repositorio
 
-Disclaimer: due to the use of the hosting service [Render](https://render.com/) in this API, the MongoDB URL had to be uncovered. But the proper and secure process involves creating a .env file for storing this kind of information.
+```
+ git clone https://github.com/Tatiespi/interactive-video-app.git
+```
 
-Create an environment file called **.env** in the root of the project and create and assign the following env variables:
-javascript
-PORT= //Port in which you will run the project
-MONGO_URL= //Url used to connect to the MongoDB database. Don't forget to add the user and password to access to the database.
-### Run the projects
+## Ingresa al repositorio
 
-Once you've completed all the configurations, you can run the project:
-bash
-# Run the app
-$ npm run start
-### Test endpoints manually
+```
+ cd interactive-video-app
+```
 
-Feel free to test the endpoints present in the API, using a tool like [Postman](https://www.postman.com/downloads/).
+## Instala las dependencias
 
-### Test the API
+```
+ npm install
+```
 
-As mentioned before, the API was deployed using the hosting service [Render](https://render.com/). The endpoints can be tested online here:
+## Ejecuta el proyecto
 
-- [Products](https://kick-store-api-danielv1213.onrender.com/products-request/products)
-- [Special prices](https://kick-store-api-danielv1213.onrender.com/products-request/price/1001/Nike/SuperJordan)
+Una vez que hayas completado todas las configuraciones, puedes ejecutar el proyecto:
 
-## Thats all!
+```
+ npx expo start
+```
 
-Now you can enjoy the best kicks API in LATAM.
+## Usar el proyecto desde Android, iOS o PC
+
+Para usar el proyecto desde las plataformas mencionadas, debes descargar e instalar la aplicación móvil [Expo Go](https://expo.dev/go) en su version de SDK 50.
+
+# Eso es todo!
+
+¡Ahora puedes disfrutar de este proyecto!
