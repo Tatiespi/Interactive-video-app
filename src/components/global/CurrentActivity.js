@@ -5,6 +5,8 @@ import FeedBack from "./Feedback";
 import DragDropLight from "../custom/Drag&DropLight";
 import DragDrop from "../custom/Drag&Drop";
 import IconQuestion from "../custom/IconQuestion";
+import ActivityButton from "../custom/ActivityButton";
+import GuideMenu from "../custom/GuideMenu";
 
 const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
   const [showFeedback, setShowFeedback] = useState(false);
@@ -77,6 +79,8 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
         onAnswerChange={(value) => setIsRightAnswer(value)}
       />
     ),
+    // Usar para mostrar la infografía al final del flujo.
+    infographic: <GuideMenu />,
   };
   return (
     // General container
@@ -84,6 +88,7 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
       {!showFeedback && (
         <View style={styles.generalStyles.container}>
           {activities[currentActivityInfo?.type]}
+          {/* <GuideMenu /> */}
         </View>
       )}
       {/* Feedback for the current activity */}

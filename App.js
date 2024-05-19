@@ -19,13 +19,16 @@ export default function App() {
   return (
     <View style={styles.generalStyles.container}>
       {/* Current video playing */}
-      <CurrentVideo
-        videoUrl={activities[activityIndex].videoUrl}
-        onVideoFinished={handleVideoFinished}
-      />
+      {/* Rendering until the fourth position of the activities JSON, because the fifth one has no video to render */}
+      {activityIndex < 5 && (
+        <CurrentVideo
+          videoUrl={activities[activityIndex].videoUrl}
+          onVideoFinished={handleVideoFinished}
+        />
+      )}
       {/* Current video playing end */}
       {/* Current activity appearing */}
-      {showActivity && (
+      {(showActivity || activityIndex === 5) && (
         <CurrentActivity
           currentActivityInfo={activities[activityIndex]}
           onNextQuestion={handleNextQuestion}

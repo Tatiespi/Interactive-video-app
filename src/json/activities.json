@@ -92,5 +92,9 @@
     ],
     "positiveFeedback": "¡Genial! Caminar en vez de usar transporte contaminante está súper. ¡Sigue así!",
     "negativeFeedback": "Comprendo, pero el bus no es lo más ecológico. Caminar es mejor pa' la Tierra. ¡Yo veré!"
+  },
+  {
+    "id": 6,
+    "type": "infographic"
   }
 ]

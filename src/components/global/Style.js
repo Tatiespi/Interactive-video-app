@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { color } from "react-native-elements/dist/helpers";
 
 const screenWidth = Dimensions.get("screen").width;
 const screenHeight = Dimensions.get("screen").height;
@@ -258,5 +259,157 @@ export const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+  },
+  buttonStyles: {
+    container: {
+      position: "absolute",
+      top: screenHeight / 2 - screenHeight * 0.49,
+      left: screenWidth / 2 - screenWidth * 0.06,
+    },
+    buttonContent: {
+      borderRadius: 50,
+      padding: 4,
+    },
+    buttonImage: {
+      width: 75,
+      height: 75,
+    },
+    buttonInfo: {
+      position: "absolute",
+      top: screenHeight / 1.8,
+      left: screenWidth / 2 - screenWidth * 0.5,
+    },
+  },
+  guideMenuStyles: {
+    container: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "rgba(223, 138, 88, 0.85)",
+      flex: 1,
+    },
+    guideMenuContainer: {
+      display: "flex",
+      alignItems: "center",
+      width: 320,
+      height: 320,
+      borderRadius: 170, // Para hacer el borde circular
+      borderWidth: 5, // Grosor del borde
+      borderStyle: "dotted", // Estilo de línea punteada
+      borderColor: "rgba(81, 117, 2, 1)", // Color del borde
+    },
+    guiaLogoImage: {
+      marginTop: 10
+    },
+    guideButtons: {
+      backgroundColor: "rgba(81, 117, 2, 1)",
+      width: 65,
+      height: 65,
+      borderRadius: 50,
+      borderColor: "white",
+      borderWidth: 3,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginLeft: 215
+    },
+    guideButtonsRight: {
+      backgroundColor: "rgba(81, 117, 2, 1)",
+      width: 65,
+      height: 65,
+      borderRadius: 50,
+      borderColor: "white",
+      borderWidth: 3,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    buttonIcons: {
+      with: 40,
+      height: 40
+    },
+    guideOptionClimateContainer:{
+      position: "absolute",
+      left: 50,
+      top: 70,
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center"
+    },
+    guideOptionDroughtContainer:{
+      position: "absolute",
+      left: 50,
+      top: 260,
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center"
+    },
+    guideOptionHeatContainer:{
+      position: "absolute",
+      left: 550,
+      top: 260,
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center"
+    },
+    guideOptionFireContainer:{
+      position: "absolute",
+      left: 550,
+      top: 70,
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center"
+    },
+    guideOptionTextContainer: {
+      backgroundColor: "rgba(81, 117, 2, 1)",
+      borderRadius: 44,
+      width: 232,
+      height: 55,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      borderColor: "white",
+      borderWidth: 3,
+      position: "absolute"
+    },
+    guideOptionTextRightContainer: {
+      backgroundColor: "rgba(81, 117, 2, 1)",
+      borderRadius: 44,
+      width: 232,
+      height: 55,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      borderColor: "white",
+      borderWidth: 3,
+      position: "absolute",
+      marginLeft: 45
+    },
+    guideOptionText: {
+      color: "white",
+      fontSize: 18,
+    },
+  },
+  guideInfographicStyles: {
+    container: {
+      position: "absolute",
+      width: screenWidth / 1.04,
+      height: screenHeight,
+    },
+    closeBtn: {
+      position: "relative",
+      left: screenWidth / 1.095,
+      top: screenHeight / 14,
+    },
+    nextBtn: {
+      position: "relative",
+      left: screenWidth / 1.18,
+      top: screenHeight / 1.52,
+    },
+    prevBtn: {
+      position: "relative",
+      left: screenWidth / 45,
+      top: screenHeight / 1.5,
+    },
   },
 });
