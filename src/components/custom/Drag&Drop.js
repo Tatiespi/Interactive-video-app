@@ -72,9 +72,7 @@ export default function DragDrop({ onFeedbackChange, onAnswerChange }) {
             break;
         }
         setOrder(order + 1);
-        console.log(order);
         if (order >= 3) {
-          console.log("Ganaste");
           onFeedbackChange(true);
           onAnswerChange(true);
         }
