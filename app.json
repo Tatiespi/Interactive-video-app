@@ -5,10 +5,10 @@
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/earthguard-logo-verde.png",
-    "userInterfaceStyle": "dark",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/earthguard-logo-verde.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [

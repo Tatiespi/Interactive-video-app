@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, TouchableHighlight } from "react-native";
+import { View, Text, TouchableHighlight } from "react-native";
 import { styles } from "../global/Style";
 
 const FunFacts = ({ currenFact, currentActivity }) => {
