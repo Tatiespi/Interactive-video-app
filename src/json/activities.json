@@ -2,6 +2,7 @@
   {
     "id": 1,
     "type": "dragDrop",
+    "funFact": "Las olas de calor en el mar son ahora el doble de comunes que en 1982. ",
     "videoUrl": "escena_1",
     "positiveFeedback": "¡Así es! Estos bombillos son los justos para recortar energía y darle una mano al ambiente. ¡Sigamos, que esto apenas empieza! ",
     "negativeFeedback": " No, así no es el cuento. Los bombillos LED son la mejor opción, ya que consumen menos energía y duran más. ¡Dale que la próxima es la buena!"
@@ -9,6 +10,7 @@
   {
     "id": 2,
     "type": "dragDropMultiElement",
+    "funFact": "Cortar árboles contribuye al 11% de todas las emisiones de gases que calientan el planeta. ",
     "videoUrl": "escena_2",
     "positiveFeedback": "¡Genial, Santiago! Sembrar árboles es clave pa’ cuidar el ambiente. Seguí así, que vamos por buen camino.",
     "negativeFeedback": "Dale una repasadita a los pasos, cada intento nos acerca más al objetivo de tener un ambiente más verde"
@@ -16,6 +18,7 @@
   {
     "id": 3,
     "type": "question",
+    "funFact": "El nivel del mar ha subido unos 20 centímetros desde el año 1900. ",
     "videoUrl": "escena_3",
     "text": "¿Cuál es el propósito principal de recolectar agua de lluvia para riego?",
     "options": [
@@ -45,6 +48,7 @@
     "id": 4,
     "text": "¿Cuál es uno de los principales beneficios ambientales de andar en bicicleta?",
     "type": "question",
+    "funFact": "El aire tiene más CO2 ahora que nunca en los últimos 3 millones de años. ",
     "videoUrl": "escena_4",
     "options": [
       {
@@ -73,6 +77,7 @@
     "id": 5,
     "text": "¿Será que camino o mejor me voy en MIO?",
     "type": "iconQuestion",
+    "funFact": "El Ártico se calienta dos veces más rápido que otros lugares del mundo.",
     "videoUrl": "escena_5",
     "options": [
       {
