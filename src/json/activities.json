@@ -10,7 +10,7 @@
   {
     "id": 2,
     "type": "dragDropMultiElement",
-    "funFact": "Cortar árboles contribuye al 11% de todas las emisiones de gases que calientan el planeta. ",
+    "funFact": "Cortar árboles contribuye al 11% de todas las emisiones de gases que calientan el planeta.",
     "videoUrl": "escena_2",
     "positiveFeedback": "¡Genial, Santiago! Sembrar árboles es clave pa’ cuidar el ambiente. Seguí así, que vamos por buen camino.",
     "negativeFeedback": "Dale una repasadita a los pasos, cada intento nos acerca más al objetivo de tener un ambiente más verde"
@@ -70,7 +70,7 @@
         "isCorrect": false
       }
     ],
-    "positiveFeedback": "¡Buena esa! Usar la bici reduce la huella de carbono al evitar el carro. ¡Te veo bien ahí!¡Buena esa! Usar la bici reduce la huella de carbono al evitar el carro. ¡Te veo bien ahí!",
+    "positiveFeedback": "¡Buena esa! Usar la bici reduce la huella de carbono al evitar el carro. ¡Te veo bien ahí!",
     "negativeFeedback": "No mi pana, la bici reduce la huella de carbono al no usar carro. Seguí aprendiendo sobre movilidad sostenible. ¡Con toda!"
   },
   {
