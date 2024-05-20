@@ -1,28 +1,26 @@
 {
   "expo": {
-    "name": "Earthguard",
-    "slug": "earth-guard",
+    "name": "interactive-video-app",
+    "slug": "interactive-video-app",
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/earthguard-logo-verde.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/earthguard-logo-verde.png",
+      "image": "./assets/LogoGuia.png",
       "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/LogoGuia.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#000000"
       },
-      "package": "com.earthguard"
+      "package": "com.interactivevideoapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

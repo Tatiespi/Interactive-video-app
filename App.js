@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StatusBar } from 'expo-status-bar';
 import { View } from "react-native";
 import CurrentVideo from "./src/components/global/CurrentVideo.js";
 import activitiesJson from "./src/json/activities.json";
@@ -38,6 +39,7 @@ export default function App() {
         />
       )}
       {/* Current activity appearing end */}
+      <StatusBar style="auto" />
     </View>
   );
 }
