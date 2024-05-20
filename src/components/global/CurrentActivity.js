@@ -5,7 +5,6 @@ import FeedBack from "./Feedback";
 import DragDropLight from "../custom/Drag&DropLight";
 import DragDrop from "../custom/Drag&Drop";
 import IconQuestion from "../custom/IconQuestion";
-import ActivityButton from "../custom/ActivityButton";
 import GuideMenu from "../custom/GuideMenu";
 import FunFacts from "../custom/FunFacts";
 
@@ -27,7 +26,6 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
   const activities = {
     question: (
       <View style={[styles.questionsStyles.container]}>
-        
         <View style={styles.questionsStyles.questionContainer}>
           <Text style={styles.questionsStyles.questionText}>
             {currentActivityInfo?.text}
@@ -90,7 +88,12 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
       {!showFeedback && (
         <View style={styles.generalStyles.container}>
           {activities[currentActivityInfo?.type]}
-          <FunFacts currenFact={currentActivityInfo?.funFact} currentActivity={currentActivityInfo?.type}/>
+          {currentActivityInfo?.id != 7 && (
+            <FunFacts
+              currenFact={currentActivityInfo?.funFact}
+              currentActivity={currentActivityInfo?.type}
+            />
+          )}
         </View>
       )}
       {/* Feedback for the current activity */}
