@@ -27,6 +27,7 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
   const activities = {
     question: (
       <View style={[styles.questionsStyles.container]}>
+        
         <View style={styles.questionsStyles.questionContainer}>
           <Text style={styles.questionsStyles.questionText}>
             {currentActivityInfo?.text}
@@ -88,8 +89,8 @@ const CurrentActivity = ({ currentActivityInfo, onNextQuestion }) => {
     <View style={styles.generalStyles.container}>
       {!showFeedback && (
         <View style={styles.generalStyles.container}>
-          {/* {activities[currentActivityInfo?.type]} */}
-          <FunFacts />
+          {activities[currentActivityInfo?.type]}
+          <FunFacts currenFact={currentActivityInfo?.funFact} currentActivity={currentActivityInfo?.type}/>
         </View>
       )}
       {/* Feedback for the current activity */}

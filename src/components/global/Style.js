@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   },
   questionsStyles: {
     container: {
-      position: "absolute",
+      position: "relative",
       top: screenHeight / 2 - screenHeight * 0.5,
       left: screenWidth / 2 - screenWidth * 0.43,
       width: screenWidth * 0.8,
@@ -256,7 +256,7 @@ export const styles = StyleSheet.create({
   videoStyles: {
     position: "absolute",
     width: "100%",
-    height: "100%"
+    height: "100%",
   },
   buttonStyles: {
     container: {
@@ -297,7 +297,7 @@ export const styles = StyleSheet.create({
       borderColor: "rgba(81, 117, 2, 1)", // Color del borde
     },
     guiaLogoImage: {
-      marginTop: 10
+      marginTop: 10,
     },
     guideButtons: {
       backgroundColor: "rgba(81, 117, 2, 1)",
@@ -309,7 +309,7 @@ export const styles = StyleSheet.create({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      marginLeft: 215
+      marginLeft: 215,
     },
     guideButtonsRight: {
       backgroundColor: "rgba(81, 117, 2, 1)",
@@ -324,39 +324,39 @@ export const styles = StyleSheet.create({
     },
     buttonIcons: {
       with: 40,
-      height: 40
+      height: 40,
     },
-    guideOptionClimateContainer:{
+    guideOptionClimateContainer: {
       position: "absolute",
       left: 50,
       top: 70,
       display: "flex",
       flexDirection: "row",
-      alignItems: "center"
+      alignItems: "center",
     },
-    guideOptionDroughtContainer:{
+    guideOptionDroughtContainer: {
       position: "absolute",
       left: 50,
       top: 260,
       display: "flex",
       flexDirection: "row",
-      alignItems: "center"
+      alignItems: "center",
     },
-    guideOptionHeatContainer:{
+    guideOptionHeatContainer: {
       position: "absolute",
       left: 550,
       top: 260,
       display: "flex",
       flexDirection: "row",
-      alignItems: "center"
+      alignItems: "center",
     },
-    guideOptionFireContainer:{
+    guideOptionFireContainer: {
       position: "absolute",
       left: 550,
       top: 70,
       display: "flex",
       flexDirection: "row",
-      alignItems: "center"
+      alignItems: "center",
     },
     guideOptionTextContainer: {
       backgroundColor: "rgba(81, 117, 2, 1)",
@@ -368,7 +368,7 @@ export const styles = StyleSheet.create({
       alignItems: "center",
       borderColor: "white",
       borderWidth: 3,
-      position: "absolute"
+      position: "absolute",
     },
     guideOptionTextRightContainer: {
       backgroundColor: "rgba(81, 117, 2, 1)",
@@ -381,7 +381,7 @@ export const styles = StyleSheet.create({
       borderColor: "white",
       borderWidth: 3,
       position: "absolute",
-      marginLeft: 45
+      marginLeft: 45,
     },
     guideOptionText: {
       color: "white",
@@ -410,20 +410,22 @@ export const styles = StyleSheet.create({
       top: screenHeight / 1.5,
     },
   },
-  funFactsStyles:{
+  funFactsStyles: {
     container: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     },
-    factContainer:{
+    factContainer: {
       width: 450,
       height: 250,
       backgroundColor: "rgba(223, 138, 88, 1)",
       borderRadius: 50,
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
+      position: "absolute",
+      right: -235,
     },
     infoButton: {
       width: 50,
@@ -433,27 +435,26 @@ export const styles = StyleSheet.create({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      marginTop: 30,
-      marginLeft: 780
+      right: 20,
+      position: "absolute",
     },
     infoIcon: {
       fontSize: 30,
       color: "white",
-      fontWeight: "bold"
+      fontWeight: "bold",
     },
     triangle: {
-      position: 'absolute',
-      top: -40, 
-      right: -135, 
+      position: "absolute",
+      right: -365,
       width: 0,
       height: 0,
       borderLeftWidth: 0,
       borderRightWidth: 160,
       borderBottomWidth: 60,
-      borderLeftColor: 'transparent',
-      borderRightColor: 'transparent',
-      borderBottomColor: 'rgba(223, 138, 88, 1)',
-      transform: [{ rotate: '-30deg' }],
+      borderLeftColor: "transparent",
+      borderRightColor: "transparent",
+      borderBottomColor: "rgba(223, 138, 88, 1)",
+      transform: [{ rotate: "-30deg" }],
     },
     factText: {
       color: "white",
@@ -461,7 +462,24 @@ export const styles = StyleSheet.create({
       fontSize: 25,
       marginLeft: 25,
       marginRight: 25,
-      textAlign: "center"
-    }
+      textAlign: "center",
+    },
+    closeButton: {
+      position: "absolute",
+      top: 9, // Ajusta según sea necesario para alineamiento vertical
+      left: 20, // Ajusta para mover el botón a la esquina izquierda
+      width: 30, // Ancho del botón
+      height: 30, // Alto del botón
+      borderRadius: 20, // Redondea las esquinas para un botón circular
+      backgroundColor: "white",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 1, // Asegúrate de que el botón esté por encima de otros elementos
+    },
+    closeIcon: {
+      color: "rgba(223, 138, 88, 1)", // Color del icono o texto dentro del botón
+      fontSize: 21, // Tamaño del texto o icono
+      fontWeight: "bold",
+    },
   },
 });
